@@ -1,0 +1,80 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title"> Liste des utlisateurs</h2>
+        </div>
+        <form>
+          <div class="input-group no-border col-md-4">
+            <input type="text" value="" class="form-control" placeholder="Search... "  (ngModelChange)="search($event)" [ngModel]="key" name="key" >
+            <div class="input-group-append">
+              
+              <div class="input-group-text">
+                <i class="now-ui-icons ui-1_zoom-bold"></i>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="card-body" >
+          <div class="table-responsive">
+            <table class="table" >
+              <thead class=" text-primary">
+                <th class="text-left">
+                  Nom
+                </th>
+                <th class="text-left">
+                  Prenom
+                </th>
+                <th class="text-left">
+                  Nom utilisateur
+                </th>
+                <th class="text-left">
+                  Email
+                </th>
+                <th class="text-left">
+                  Role
+                </th>
+                <th>
+                  Action
+                </th>
+              </thead>
+              <tbody >
+                <tr *ngFor="let user of allusers"  >
+                  <td (click)="DetailsUser(user.id)" style="cursor: pointer">
+                  {{user.userFName}}
+                  </td>
+                  <td (click)="DetailsUser(user.id)" style="cursor: pointer">
+                    {{user.userLName}}                  
+                  </td>
+                  <td (click)="DetailsUser(user.id)" style="cursor: pointer">
+                    {{user.userName}}
+                  </td >
+                  <td (click)="DetailsUser(user.id)" style="cursor: pointer">
+                    {{user.email}}
+                  </td>
+                  <td (click)="DetailsUser(user.id)" style="cursor: pointer">
+                    {{user.role[0].roleName}}
+                  </td>
+                  <td>
+                    <button class="btn btn-warning" style="background-color: rgb(255, 187, 0);"><i style="font-size: 15px; " class="now-ui-icons ui-1_settings-gear-63"></i></button> &nbsp;
+                    <button class="btn btn-danger " style="background-color: red;"  (click)="deleteuser(user)"><i class="now-ui-icons ui-1_simple-remove"></i></button>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ngb-pagination  
+            [boundaryLinks]="true"  [maxSize]="3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="nextPage($event);" class="pagination-primary">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
