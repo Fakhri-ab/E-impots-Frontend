@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     VerifyEmailComponent,
     LoginComponent,
     ForgetpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DemandeInscriptionComponent
   ],
   imports: [
     CommonModule,

@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SharedDetailComponentComponent implements OnInit {
 
   constructor() { }
-@Input() 
+@Input()
   ngOnInit(): void {
   }
 

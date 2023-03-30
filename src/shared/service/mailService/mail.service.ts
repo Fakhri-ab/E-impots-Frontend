@@ -8,73 +8,73 @@ import { mailModel } from 'shared/models/mailModel';
   providedIn: 'root'
 })
 export class MailService {
+  url = environment.url
 
-  constructor(private http:HttpClient) { }
-  url=environment.url
+  constructor(private http: HttpClient) { }
 
 
-//liste des traitement tech& rh  for drhhh
-listTR1(o:any){
+// liste des traitement tech& rh  for drhhh
+listTR1(o: any) {
   const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-  return this.http.get(this.url+'/tr1',{params})
+  return this.http.get(this.url + '/tr1', {params})
 }
-listTR2(o:any){
+listTR2(o: any) {
   const params = new HttpParams()
   .set('page', o.page)
   .set('size', o.size)
   .set('recherche', o.recherche)
-  return this.http.get(this.url+'/tr2',{params})
+  return this.http.get(this.url + '/tr2', {params})
 }
-  AllMail(o:any): Observable<mailModel[]> { 
+  AllMail(o: any): Observable<mailModel[]> {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get<mailModel[]>( this.url+"/getAllMail",{params});
+    return this.http.get<mailModel[]>( this.url + '/getAllMail', {params});
   }
-  GetMailById(id:number): Observable<mailModel>{
-    return this.http.get<mailModel>(this.url+"/getMailById/"+id)
+  GetMailById(id: number): Observable<mailModel> {
+    return this.http.get<mailModel>(this.url + '/getMailById/' + id)
   }
-  downloadPdf(idMail:any,idAtt:any){
-    return this.http.get(this.url+"/src"+idMail+'/'+idAtt)
+  downloadPdf(idMail: any, idAtt: any) {
+    return this.http.get(this.url + '/src' + idMail + '/' + idAtt)
   }
-  Mailencours(o:any): Observable<mailModel[]>{
+  Mailencours(o: any): Observable<mailModel[]> {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get<mailModel[]>(this.url+"/mailsencours",{params});
+    return this.http.get<mailModel[]>(this.url + '/mailsencours', {params});
   }
-  MailsNontraiter(o:any): Observable<mailModel[]>{
+  MailsNontraiter(o: any): Observable<mailModel[]> {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get<mailModel[]>(this.url+"/mailsnontraiter",{params});
+    return this.http.get<mailModel[]>(this.url + '/mailsnontraiter', {params});
   }
-  Mailstraiter(o:any){
+  Mailstraiter(o: any) {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get(this.url+"/mailstraiter",{params});
+    return this.http.get(this.url + '/mailstraiter', {params});
   }
-  listeMailTR1BYUserConnected(o:any):Observable<mailModel[]>{
+  listeMailTR1BYUserConnected(o: any): Observable<mailModel[]> {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get<mailModel[]>(this.url+"/listeMailsGeneratedByName",{params});
+    return this.http.get<mailModel[]>(this.url + '/listeMailsGeneratedByName', {params});
   }
 
-  listeMailTR2BYUserConnected(o:any):Observable<mailModel[]>{
+  listeMailTR2BYUserConnected(o: any): Observable<mailModel[]> {
     const params = new HttpParams()
     .set('page', o.page)
     .set('size', o.size)
     .set('recherche', o.recherche)
-    return this.http.get<mailModel[]>(this.url+"/listeMailstr2",{params});
+    return this.http.get<mailModel[]>(this.url + '/listeMailstr2', {params});
   }
 }

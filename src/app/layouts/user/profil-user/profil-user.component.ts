@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil-user.component.css']
 })
 export class ProfilUserComponent implements OnInit {
-  user:any
+  user: any
   constructor(
-    private userService:UserService
+    private userService: UserService
   ) { }
 
 
   ngOnInit(): void {
     this.getuser();
   }
-  getuser(){
-    this.userService.getuser().subscribe(res=>{
-       this.user= res
+  getuser() {
+    this.userService.getuser().subscribe(res => {
+       this.user = res
     })
   }
 

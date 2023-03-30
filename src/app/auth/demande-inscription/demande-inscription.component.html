@@ -1,0 +1,90 @@
+<!-- filter-color="orange" -->
+<div class="page-header login-page " >
+    <div class="page-header-image" style="background-image:url(assets/img/bg.png)"></div>
+    <div class="container">
+        <div class="col-md-4 content-center">
+            <div class="card card-login card-plain">
+                <form class="form" [formGroup]="demandeForm" (ngSubmit)="submit()">
+                    <div class="header header-primary text-center">
+                        <div class="logo-container">
+                            <img src="assets/img/now-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="content">
+
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Nom d'utilisateur ..."
+                                   formControlName="userName"   ngModel name="userName" id="userName">
+                        </div>
+
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="FirstName..."
+                                   formControlName="userFName"    ngModel name="userFName" id="userFName">
+                        </div>
+
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="LastName..."
+                                   formControlName="userLName"     ngModel name="userLName" id="userLName">
+                        </div>
+
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="email" class="form-control" placeholder="Email..."
+                                   formControlName="email"  ngModel name="email" id="email">
+                        </div>
+<!--
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="roleName..."
+                                   formControlName="roleName"   ngModel name="roleName" id="roleName">
+                        </div>
+-->
+
+
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="password..."
+                                   formControlName="password"    ngModel name="password" id="password">
+                        </div>
+
+                        <select  class="input-group form-group-no-border input-lg btn-round" formControlName="roleName"  id="roleName" >
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+
+
+
+                    </div>
+                    <div class="footer text-center">
+                        <button  type="submit" class="btn btn-primary btn-round btn-lg btn-block">Envoyer</button>
+
+                    </div>
+                    <div class="pull-left">
+                        <!-- <h6>
+                            <a href="#pablo" class="link">Create Account</a>
+                        </h6> -->
+
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

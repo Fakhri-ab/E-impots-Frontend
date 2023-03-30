@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsersComponent } from './users.component';
 import { UsersRoutingModule } from './users-routing.module';
-import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown' 
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ListUsersComponent } from './list-users/list-users.component';
@@ -26,7 +26,7 @@ import { DetailsUserComponent } from './details-user/details-user.component';
     ReactiveFormsModule,
     FormsModule,
     NgbModule
-    
+
   ]
 })
 export class UserModule { }

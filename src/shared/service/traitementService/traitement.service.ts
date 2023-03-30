@@ -7,45 +7,45 @@ import { environment } from 'environments/environment';
   providedIn: 'root'
 })
 export class TraitementService {
-  url=environment.url
+  url = environment.url
 
   constructor(
-    private  httpclient :HttpClient,
+    private  httpclient: HttpClient,
 
   ) { }
 
-  //Traitement Rh
-  refusedRhTr(idMail:any,fs:any,note:any,etat:any,userName:any,meet:any){
-    return this.httpclient.get(this.url+'/process/start/'+ idMail+'/'+fs+'/'+note+'/'+etat+'/'+userName+'/'+meet);
+  // Traitement Rh
+  refusedRhTr(idMail: any, fs: any, note: any, etat: any, userName: any, meet: any) {
+    return this.httpclient.get(this.url + '/process/start/' + idMail + '/' + fs + '/' + note + '/' + etat + '/' + userName + '/' + meet);
   }
 
-  accpetedRhTr(idMail:any,fs:any,note:any,etat:any,userName:any,meet:any){
-    return this.httpclient.get(this.url+'/process/start/'+ idMail+'/'+fs+'/'+note+'/'+etat+'/'+userName+'/'+meet);
+  accpetedRhTr(idMail: any, fs: any, note: any, etat: any, userName: any, meet: any) {
+    return this.httpclient.get(this.url + '/process/start/' + idMail + '/' + fs + '/' + note + '/' + etat + '/' + userName + '/' + meet);
   }
-  //mailtasksSend by role 
-  gettraitementByRoleOfUserConnected(){
-    return this.httpclient.get<Traitement>(this.url+'/process/getAllMailByRole')
+  // mailtasksSend by role
+  gettraitementByRoleOfUserConnected() {
+    return this.httpclient.get<Traitement>(this.url + '/process/getAllMailByRole')
   }
-  //mailtasks Send by user Name 
-  listeTasktrTechMailRecuPourLesTraiter(){
-    return this.httpclient.get<Traitement>(this.url+'/process/getAllMailByName')
-  }
-
-  //traitement technique 
-  refusedTechTr(idMail:any,note:any,etat:any){
-    return this.httpclient.get(this.url+'/process/tr2/'+ idMail+'/'+note+'/'+etat);
+  // mailtasks Send by user Name
+  listeTasktrTechMailRecuPourLesTraiter() {
+    return this.httpclient.get<Traitement>(this.url + '/process/getAllMailByName')
   }
 
-  accpetedTechTr(idMail:any,note:any,etat:any){
-    return this.httpclient.get(this.url+'/process/tr2/'+ idMail+'/'+note+'/'+etat);
+  // traitement technique
+  refusedTechTr(idMail: any, note: any, etat: any) {
+    return this.httpclient.get(this.url + '/process/tr2/' + idMail + '/' + note + '/' + etat);
   }
 
-  //traitement drh 
-  refuseddrhTr(idMail:any,ls:any,note:any,etat:any){
-    return this.httpclient.get(this.url+'/process/tr3/'+ idMail+'/'+ls+'/'+note+'/'+etat);
+  accpetedTechTr(idMail: any, note: any, etat: any) {
+    return this.httpclient.get(this.url + '/process/tr2/' + idMail + '/' + note + '/' + etat);
   }
 
-  accpeteddrhTr(idMail:any,ls:any,note:any,etat:any){
-    return this.httpclient.get(this.url+'/process/tr3/'+ idMail+'/'+ls+'/'+note+'/'+etat);
+  // traitement drh
+  refuseddrhTr(idMail: any, ls: any, note: any, etat: any) {
+    return this.httpclient.get(this.url + '/process/tr3/' + idMail + '/' + ls + '/' + note + '/' + etat);
+  }
+
+  accpeteddrhTr(idMail: any, ls: any, note: any, etat: any) {
+    return this.httpclient.get(this.url + '/process/tr3/' + idMail + '/' + ls + '/' + note + '/' + etat);
   }
 }

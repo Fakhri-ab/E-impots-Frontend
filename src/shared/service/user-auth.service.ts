@@ -30,8 +30,9 @@ export class UserAuthService {
     return this.getRoles() && this.getToken();
   }
   public logout() {
+    localStorage.clear();
     localStorage.removeItem('jwtToken') ;
-    localStorage.removeItem('roles')
+    localStorage.removeItem('roles');
   }
 
 

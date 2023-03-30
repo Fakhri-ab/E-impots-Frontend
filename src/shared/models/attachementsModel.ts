@@ -1,4 +1,4 @@
 export class AttachementsModel {
-    idAtt:number
-    name:string
+    idAtt: number
+    name: string
 }

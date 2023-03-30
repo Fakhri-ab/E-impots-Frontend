@@ -11,12 +11,12 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   private _router: Subscription;
-  spinner=true
-  
+  spinner = true
+
   constructor() {}
   ngOnInit() {
-setTimeout(() => {  
-  this.spinner=false;
+setTimeout(() => {
+  this.spinner = false;
 }, 2000);
 }
 }

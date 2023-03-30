@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-     let body = document.getElementsByTagName('body')[0];
+     const body = document.getElementsByTagName('body')[0];
         body.classList.add('login-page');
   }
    login(loginForm: NgForm) {
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
        } else {
            // tslint:disable-next-line:triple-equals
-        if (role == 'admin') {
+        if (role == 'User' || role == 'admin' ) {
           this.router.navigate(['/admin/dashboard'])
             // tslint:disable-next-line:triple-equals
          } else if (role == 'rh') {
@@ -68,5 +68,9 @@ export class LoginComponent implements OnInit {
     ngOnDestroy() {
 
     }
+
+  //  gotoDemandeInscription(){
+    //    this.router.navigate(['auth/demande'])
+   // }
 
 }

@@ -5,6 +5,7 @@ import { environment } from 'environments/environment';
 import { userModel } from 'shared/models/User';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {DemandeInscription} from '../models/demande-inscription';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,7 @@ export class UserService {
       for (let i = 0; i < userRoles.length; i++) {
         for (let j = 0; j < allowedRoles.length; j++) {
 
+          // tslint:disable-next-line:triple-equals
           if (userRoles[i].roleName == allowedRoles) {
             isMatch = true;
             return isMatch;
@@ -61,6 +63,22 @@ export class UserService {
     return this.httpclient.post(this.url + '/register', form);
   }
 
+  addDemandeinscri(form: DemandeInscription) {
+    return this.httpclient.post(this.url + 'ajouterDemande', form);
+  }
+
+  getallDemandes(o: any): Observable<DemandeInscription> {
+    const params = new HttpParams()
+        .set('page', o.page)
+        .set('size', o.size)
+        .set('recherche', o.recherche)
+    return this.httpclient.get<DemandeInscription>(this.url + '/getallDemandes', {params})
+  }
+
+  deleteDemande(id): Observable<any> {
+    return this.httpclient.delete(this.url + 'deleteDemande/' + id);
+  }
+
   getuser(): Observable<userModel> {
     return this.httpclient.get<userModel>(this.url + '/getuser');
   }
@@ -73,6 +91,10 @@ export class UserService {
   .set('size', o.size)
   .set('recherche', o.recherche)
     return this.httpclient.get<userModel>(this.url + '/getalluser', {params})
+  }
+
+  getallusers2() {
+    return this.httpclient.get<userModel>(this.url + '/Alluser2')
   }
   getalltechuser(): Observable<userModel> {
     return this.httpclient.get<userModel>(this.url + '/getalltechuser')

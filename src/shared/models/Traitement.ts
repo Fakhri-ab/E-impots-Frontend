@@ -1,6 +1,6 @@
-export class Traitement{
-        trId:number
-        note:string
-        generatedby:string
-        etat:string
+export class Traitement {
+        trId: number
+        note: string
+        generatedby: string
+        etat: string
 }

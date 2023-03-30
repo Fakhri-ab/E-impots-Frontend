@@ -12,11 +12,15 @@ declare interface RouteInfo {
 
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/admin/dashboard', title: 'Dashboard',  icon: 'design_app', class: '', roleName: ['admin'] },
+    { path: '/admin/dashboard', title: 'Dashboard',  icon: 'design_app', class: '', roleName: ['User'] },
     // tslint:disable-next-line:max-line-length
   //  { path: '/admin/demande/alldemande', title: 'Mes demandes',  icon: 'users_single-02', class: '' , permissions: ['add_conge'], roleName: ['User'] },
     // tslint:disable-next-line:max-line-length
     { path: '/admin/user', title: 'users',  icon: 'users_single-02', class: '', roleName: ['admin'] },
+    { path: '/admin/reclamation', title: 'reclamation',  icon: 'users_single-02', class: '', roleName: ['admin'] },
+    { path: '/admin/demandes', title: 'Demandes inscription',  icon: 'users_single-02', class: '', roleName: ['admin'] },
+    { path: '/admin/infosGenerales', title: 'information-generale',  icon: 'users_single-02', class: '', roleName: ['User'] },
+
 
 
 

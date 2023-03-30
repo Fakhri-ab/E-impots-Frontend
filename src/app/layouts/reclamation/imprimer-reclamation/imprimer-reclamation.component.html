@@ -1,0 +1,62 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="title">Service Reclamation</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="title">remplir ce formulaire s'il vous plais</h4>
+                    <form  [formGroup]="UserForm"  >
+                        <div class="row">
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Fisrt Name</label>
+                                    <input type="text"
+                                           [formControlName]="'userFName'"
+                                           formControlName="userFName"
+                                           class="form-control" placeholder=" Fisrt Name " value="">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text"
+                                           [formControlName]="'userLName'"
+                                           formControlName="userLName"
+                                           class="form-control" placeholder=" Last Name " value="">
+                                </div>
+
+                            </div>
+
+                            <!--
+                                            <div class="col-md-3 px-1">
+                                                <div class="form-group">
+                                                    <select  class="form-control" formControlName="Status" data-toggle="tooltip"
+                                                            data-placement="right" title="Select Reclamation Status">
+                                                        <option value="New">New</option>
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Done">Done</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                -->
+                        </div>
+
+
+                        <button type="button" (click)="pdf()" class="btn btn-primary right">Imprimer Recu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

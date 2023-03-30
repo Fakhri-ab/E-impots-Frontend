@@ -1,0 +1,95 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="title">Ajouter Nouveau Reclamation</h2>
+                </div>
+                <div class="card-body">
+                    <form #f="ngForm" [formGroup]="ReclamationForm" (ngSubmit)="submit(f)" >
+                        <div class="row">
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Id</label>
+                                    <input type="text"
+                                           [(ngModel)]="rec.idReclamation"
+                                           [formControlName]="'idReclamation'"
+                                           formControlName="idReclamation"
+                                           class="form-control" placeholder=" description " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text"
+                                           [(ngModel)]="rec.description"
+                                           [formControlName]="'description'"
+                                           formControlName="description"
+                                           class="form-control" placeholder=" description " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <input type="text"
+                                           [(ngModel)]="rec.typeReclamation"
+                                           [formControlName]="'typeReclamation'"
+                                           formControlName="typeReclamation"
+                                           class="form-control" placeholder=" description " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <input type="text"
+                                           [(ngModel)]="rec.status"
+                                           [formControlName]="'Status'"
+                                           formControlName="Status"
+                                           class="form-control" placeholder=" Status " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="text"
+                                           [(ngModel)]="rec.dateOfReclam"
+                                           [formControlName]="'dateOfReclam'"
+                                           formControlName="dateOfReclam"
+                                           class="form-control" placeholder=" dateOfReclam " value="">
+                                </div>
+                            </div>
+
+
+                            <!--
+                                            <div class="col-md-3 px-1">
+                                                <div class="form-group">
+                                                    <select  class="form-control" formControlName="Status" data-toggle="tooltip"
+                                                            data-placement="right" title="Select Reclamation Status">
+                                                        <option value="New">New</option>
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Done">Done</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                -->
+                        </div>
+
+
+                        <button type="submit"  class="btn btn-primary right">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

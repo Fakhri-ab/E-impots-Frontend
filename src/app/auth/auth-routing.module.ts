@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import {DemandeInscriptionComponent} from './demande-inscription/demande-inscription.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,7 @@ export const routes: Routes = [
   {path: 'log', component: LoginComponent},
   {path: 'forget', component: ForgetpasswordComponent},
   {path: 'reset', component: ResetpasswordComponent},
+  {path: 'demande', component: DemandeInscriptionComponent}
 
 
 

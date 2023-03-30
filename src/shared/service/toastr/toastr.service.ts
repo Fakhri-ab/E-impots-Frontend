@@ -7,18 +7,18 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class myToastrService {
 
-  constructor(private toastr :ToastrService) { }
+  constructor(private toastr: ToastrService) { }
 
-  showNotification(from, align,color,title1,title2,msg){
+  showNotification(from, align, color, title1, title2, msg) {
 
 
-    switch(color){
+    switch (color) {
       case 1:
       this.toastr.info(`<span class="now-ui-icons ui-1_bell-53"></span> ${title1} <b>${title2}</b> ${msg}`, '', {
          timeOut: 8000,
          closeButton: true,
          enableHtml: true,
-         toastClass: "alert alert-info alert-with-icon",
+         toastClass: 'alert alert-info alert-with-icon',
          positionClass: 'toast-' + from + '-' +  align
        });
       break;
@@ -27,7 +27,7 @@ export class myToastrService {
           timeOut: 8000,
           closeButton: true,
           enableHtml: true,
-          toastClass: "alert alert-success alert-with-icon",
+          toastClass: 'alert alert-success alert-with-icon',
           positionClass: 'toast-' + from + '-' +  align
         });
       break;
@@ -36,7 +36,7 @@ export class myToastrService {
           timeOut: 8000,
           closeButton: true,
           enableHtml: true,
-          toastClass: "alert alert-warning alert-with-icon",
+          toastClass: 'alert alert-warning alert-with-icon',
           positionClass: 'toast-' + from + '-' +  align
         });
       break;
@@ -45,17 +45,17 @@ export class myToastrService {
           timeOut: 8000,
           closeButton: true,
           enableHtml: true,
-          toastClass: "alert alert-danger alert-with-icon",
+          toastClass: 'alert alert-danger alert-with-icon',
           positionClass: 'toast-' + from + '-' +  align
         });
-        
+
        break;
        case 5:
         this.toastr.show(`<span class="now-ui-icons ui-1_bell-53"></span> ${title1} <b>${title2}</b> ${msg}`, '', {
           timeOut: 8000,
           closeButton: true,
           enableHtml: true,
-          toastClass: "alert alert-primary alert-with-icon",
+          toastClass: 'alert alert-primary alert-with-icon',
           positionClass: 'toast-' + from + '-' +  align
         });
       break;

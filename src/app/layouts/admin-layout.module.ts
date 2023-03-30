@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './user/users.component';
 import { RoleComponent } from './role/role.component';
+import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
+
 
 @NgModule({
   imports: [
@@ -23,12 +25,15 @@ import { RoleComponent } from './role/role.component';
     ReactiveFormsModule,
     HttpClientModule,
     DragDropModule,
-    
+
   ],
   declarations: [
     DashboardComponent,
     UsersComponent,
-    RoleComponent
+    RoleComponent,
+    DemandeInscriptionComponent,
+
+
   ]
 })
 

@@ -10,7 +10,7 @@ export class RoleComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
- 
+
   }
 
 }

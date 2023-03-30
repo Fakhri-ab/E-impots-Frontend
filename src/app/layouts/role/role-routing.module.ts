@@ -11,12 +11,12 @@ const routes: Routes = [
     redirectTo: 'list-r',
     pathMatch: 'full',
   },
-  {path:'add-r',component:AddRoleComponent,
-  canActivate:[RoleGuard],data:{role:'d_rh'}},
-  {path:'list-r',component:ListeRoleComponent,
-  canActivate:[RoleGuard],data:{role:'d_rh'}},
-  {path:'details-r',component:DetailsRoleComponent,
-  canActivate:[RoleGuard],data:{role:'d_rh'}},
+  {path: 'add-r', component: AddRoleComponent,
+  canActivate: [RoleGuard], data: {role: 'd_rh'}},
+  {path: 'list-r', component: ListeRoleComponent,
+  canActivate: [RoleGuard], data: {role: 'd_rh'}},
+  {path: 'details-r', component: DetailsRoleComponent,
+  canActivate: [RoleGuard], data: {role: 'd_rh'}},
 
 
 ];

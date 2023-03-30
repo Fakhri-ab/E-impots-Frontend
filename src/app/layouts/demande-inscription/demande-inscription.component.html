@@ -1,0 +1,100 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"> Liste des Demandes</h2>
+                </div>
+                <form>
+                    <div class="input-group no-border col-md-4">
+                        <input type="text" value="" class="form-control" placeholder="Search... " (ngModelChange)="search($event)" [ngModel]="key" name="key"   >
+                        <div class="input-group-append">
+
+                            <div class="input-group-text">
+                                <i class="now-ui-icons ui-1_zoom-bold"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="card-body" >
+                    <div class="table-responsive">
+                        <table class="table" >
+                            <thead class=" text-primary">
+                            <th class="text-left">
+                                Id
+                            </th>
+                            <th class="text-left">
+                                userName
+                            </th>
+                            <th class="text-left">
+                                userFName
+                            </th>
+                            <th class="text-left">
+                                userLName
+                            </th>
+                            <th class="text-left">
+                                email
+                            </th>
+                            <th class="text-left">
+                                roleName
+                            </th>
+                            <th>
+                                password
+                            </th>
+                            <th>
+                                status
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                            </thead>
+                            <tbody   >
+                            <tr  *ngFor="let dem of allDemandes"  >
+                                <td >
+                                    {{dem.id}}
+                                </td>
+                                <td  style="cursor: pointer ;" >
+                                    {{dem.userName}}
+                                </td>
+                                <td style="cursor: pointer">
+                                    {{dem.userFName}}
+                                </td >
+                                <td  style="cursor: pointer">
+                                    {{dem.userLName}}
+                                </td>
+                                <td  style="cursor: pointer">
+                                    {{dem.email}}
+                                </td>
+                                <td>
+                                    {{dem.roleName}}
+                                </td>
+                                <td>
+                                    {{dem.password}}
+                                </td>
+                                <td>
+                                    {{dem.status}}
+                                </td>
+                                <td>&nbsp;
+
+                                    <button _ngcontent-c3 (click)="deleteDemande(dem)" class="btn btn-primary btn-simple btn-round" type="button">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <ngb-pagination
+                                [boundaryLinks]="true"  [maxSize]="3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="nextPage($event);" class="pagination-primary">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

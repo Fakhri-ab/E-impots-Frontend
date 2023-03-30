@@ -9,20 +9,18 @@ import { UserService } from 'shared/service/user.service';
 })
 export class LoginGuard implements CanActivate {
   constructor(
-    private userAuthService:UserAuthService,
-    private router:Router,
-    private userService:UserService
-  ){}   
-  
-  
+    private userAuthService: UserAuthService,
+    private router: Router,
+    private userService: UserService
+  ) {}
+
+
   canActivate() {
-    if (this.userAuthService.getToken()){
-        this.router.navigateByUrl('admin/dashboard')   
-     }
-    else
-    {
+    if (this.userAuthService.getToken()) {
+        this.router.navigateByUrl('admin/dashboard')
+     } else {
         return true
-      
+
     }
   }
 

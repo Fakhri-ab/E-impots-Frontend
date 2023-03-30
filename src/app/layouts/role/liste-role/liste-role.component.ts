@@ -8,30 +8,30 @@ import { RolesService } from 'shared/service/roleService/roles.service';
   styleUrls: ['./liste-role.component.css']
 })
 export class ListeRoleComponent implements OnInit {
-  allrole:any
-  idRole:number
+  allrole: any
+  idRole: number
 
   constructor(
-    private rolesService:RolesService,
-    private router:Router
+    private rolesService: RolesService,
+    private router: Router
 
   ) { }
 
   ngOnInit(): void {
       this.getAllRole();
   }
-  getAllRole(){
-    this.rolesService.getAllrole().subscribe(res=>{
-        this.allrole=res
+  getAllRole() {
+    this.rolesService.getAllrole().subscribe(res => {
+        this.allrole = res
     })
   }
-  deleteRole(row:any){
-    this.rolesService.deleteRole(row.idRole).subscribe(res=>{
-      alert("role supprimer")
+  deleteRole(row: any) {
+    this.rolesService.deleteRole(row.idRole).subscribe(res => {
+      alert('role supprimer')
       this.getAllRole();
     })
   }
-  ajouterRole(){
+  ajouterRole() {
     this.router.navigate(['admin/role/add-r'])
   }
 }
