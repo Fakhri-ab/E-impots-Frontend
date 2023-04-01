@@ -1,1 +1,117 @@
-<p>editinfo works!</p>
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="title">Modifier mes informations </h2>
+                </div>
+                <div class="card-body">
+                    <form #f="ngForm" (ngSubmit)="submit(f)" [formGroup]="infoForm">
+                        <div class="row">
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Id</label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].id"
+                                           formControlName="id"
+                                           [formControlName]="'id'"
+                                           class="form-control" placeholder="id " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Numéro d'identification fiscale</label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].nif"
+                                           formControlName="nif"
+                                           [formControlName]="'nif'"
+                                           class="form-control" placeholder="nif " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Nom ou Raison sociale</label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].nomRaisonsociale"
+                                           formControlName="nomRaisonsociale"
+                                           [formControlName]="'nomRaisonsociale'"
+                                           class="form-control" placeholder="Nom ou Raison sociale " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Adresse Geographique</label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].adresseGeographique"
+                                           formControlName="adresseGeographique"
+                                           [formControlName]="'adresseGeographique'"
+                                           class="form-control" placeholder="Adresse Geographique " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Adresse postale</label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].adressePostale"
+                                           formControlName="adressePostale"
+                                           [formControlName]="'adressePostale'"
+                                           class="form-control" placeholder="Adresse postale " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>ville </label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].ville"
+                                           formControlName="ville"
+                                           [formControlName]="'ville'"
+                                           class="form-control" placeholder="ville  " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>email </label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].email"
+                                           formControlName="email"
+                                           [formControlName]="'email'"
+                                           class="form-control" placeholder="email  " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>telephone </label>
+                                    <input type="text"
+                                           [(ngModel)]="info[0].telephone"
+                                           formControlName="telephone"
+                                           [formControlName]="'telephone'"
+                                           class="form-control" placeholder="telephone  " value="">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <hr>
+                        <br>
+
+                        <button type="submit" class="btn btn-primary right">sauvegarder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

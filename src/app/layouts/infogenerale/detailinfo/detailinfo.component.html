@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 >Numéro d'identification fiscale : <label>{{info[0].nif}}</label> </h5>
                     <h5>Nom ou Raison sociale : <label>{{info[0].nomRaisonsociale}}</label> </h5>
-                    <h5>Adresse Geographique :<label>{{info[0].adresseGeographique}}</label></h5>
+                    <h5>Adresse Geographique : <label>{{info[0].adresseGeographique}}</label></h5>
                     <h5>Adresse Postale : <label>{{info[0].adressePostale}}</label></h5>
                     <h5>Ville : <label>{{info[0].ville}}</label></h5>
                     <h5>Telephone : <label>{{info[0].telephone}}</label></h5>
@@ -19,10 +19,14 @@
                 </div>
                 <hr>
                 <div class="button-container">
-                    <button  class="btn btn-neutral   btn-lg" >
-                        Modifier Profile
+                    <button  [disabled]="dhahra"   class="btn btn-neutral   btn-lg" (click)="gotoadd()" >
+                        Ajouter mes informations
+                    </button>
+                    <button  class="btn btn-neutral   btn-lg" (click)="gotoedit()" >
+                        Modifier mes informations
                     </button>
                 </div>
+
             </div>
         </div>
 

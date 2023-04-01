@@ -1,1 +1,92 @@
-<p>addinfogenerale works!</p>
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="title">Ajouter mes informations </h2>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="submit()" [formGroup]="infoForm">
+                        <div class="row">
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Numéro d'identification fiscale</label>
+                                    <input type="text"
+                                           formControlName="nif"
+                                           class="form-control" placeholder="nif " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Nom ou Raison sociale</label>
+                                    <input type="text"
+                                           formControlName="nomRaisonsociale"
+                                           class="form-control" placeholder="Nom ou Raison sociale " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Adresse Geographique</label>
+                                    <input type="text"
+                                           formControlName="adresseGeographique"
+                                           class="form-control" placeholder="Adresse Geographique " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Adresse postale</label>
+                                    <input type="text"
+                                           formControlName="adressePostale"
+                                           class="form-control" placeholder="Adresse postale " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>ville </label>
+                                    <input type="text"
+                                           formControlName="ville"
+                                           class="form-control" placeholder="ville  " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>email </label>
+                                    <input type="text"
+                                           formControlName="email"
+                                           class="form-control" placeholder="email  " value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>telephone </label>
+                                    <input type="text"
+                                           formControlName="telephone"
+                                           class="form-control" placeholder="telephone  " value="">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <hr>
+                        <br>
+
+                        <button type="submit" class="btn btn-primary right">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
