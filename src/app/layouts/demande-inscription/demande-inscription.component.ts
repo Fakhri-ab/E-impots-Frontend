@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../shared/service/user.service';
 import {Router} from '@angular/router';
 import {DemandeInscription} from '../../../shared/models/demande-inscription';
+import {myToastrService} from '../../../shared/service/toastr/toastr.service';
 
 @Component({
   selector: 'app-demande-inscription',
@@ -15,7 +16,7 @@ export class DemandeInscriptionComponent implements OnInit {
   page = 0
   collectionSize: number
   key = ''
-  constructor(private userService: UserService , private router: Router ) { }
+  constructor(private userService: UserService , private router: Router , private toastr: myToastrService ) { }
 
   ngOnInit(): void {
     this.getAllDemandess({ page: 0, size: 5, recherche: this.key }) ;

@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
+// tslint:disable-next-line:class-name
 export class myToastrService {
 
   constructor(private toastr: ToastrService) { }

@@ -47,10 +47,10 @@ export class ReclamationService {
     return this.httpclient.delete(this.url + 'remove-Reclamation/' + id);
   }
   generatePDF() {
-    return this.httpclient.get<any>(this.url + 'genratepdf')
+    return this.httpclient.get<any>(this.url + 'downloadPdf')
   }
 
-  getallReclamationsbyUserId(): Observable<Reclamation> {
-    return this.httpclient.get<Reclamation>(this.url + 'getAllReclamationsByUserId/1' )
+  getallReclamationsbyUserId(id: any): Observable<Reclamation> {
+    return this.httpclient.get<Reclamation>(this.url + 'getAllReclamationsByUserId/' + id )
   }
 }

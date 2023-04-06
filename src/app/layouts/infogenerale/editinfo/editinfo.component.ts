@@ -26,6 +26,7 @@ export class EditinfoComponent implements OnInit {
         adressePostale: new FormControl(''),
         telephone: new FormControl(''),
         email: new FormControl(''),
+        activites: new FormControl(''),
     });
   constructor(private infogenraleService: InfogenraleService,
               private router: Router,

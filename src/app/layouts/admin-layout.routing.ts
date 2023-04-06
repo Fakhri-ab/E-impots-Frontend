@@ -75,6 +75,16 @@ export const AdminLayoutRoutes: Routes = [
 
             }]},
 
+    {
+        path: 'passerReclamation',
+        component: InfogeneraleComponent ,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./passer-reclamation/passer-reclamation.module').then(x => x.PasserReclamationModule),
+
+            }]}
+
 
 
 ];

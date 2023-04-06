@@ -1,0 +1,69 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="title">Ajouter Nouveau Reclamation</h2>
+                </div>
+                <div class="card-header">
+                    <button _ngcontent-c3 (click)="gotomesReclamations()" class="btn btn-primary btn-simple btn-round" type="button">
+                        Mes Reclamations</button>
+                </div>
+                <div class="card-body">
+                    <form  [formGroup]="ReclamationForm" (ngSubmit)="submit()" >
+                        <div class="row">
+
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text"
+                                           [formControlName]="'description'"
+                                           formControlName="description"
+                                           class="form-control" placeholder=" description " value="">
+                                </div>
+                                <div
+                                        class="alert-danger">
+                                </div>
+                            </div>
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>types</label>
+                                    <select  class="input-group form-group-no-border input-lg btn-round" style="height: 38px; font-size: 20px;"
+                                             [formControlName]="'typeReclamation'"
+                                             formControlName="typeReclamation"  id="typeReclamation" >
+                                        <option value="Autres">Autres</option>
+                                        <option value="Date_expiree">Date_expiree</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!--
+                                            <div class="col-md-3 px-1">
+                                                <div class="form-group">
+                                                    <select  class="form-control" formControlName="Status" data-toggle="tooltip"
+                                                            data-placement="right" title="Select Reclamation Status">
+                                                        <option value="New">New</option>
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Done">Done</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                -->
+                        </div>
+
+
+                        <button type="submit"  class="btn btn-primary btn-simple btn-round">
+                            <i class="now-ui-icons ui-1_simple-add"></i>Ajouter</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

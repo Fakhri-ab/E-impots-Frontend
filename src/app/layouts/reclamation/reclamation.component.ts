@@ -57,14 +57,6 @@ getAllReclamations(request) {
   })
   }
 
-  getreclamationbyuser(e) {
-    if (e.target.checked) {
-      this.reclamationService.getallReclamationsbyUserId().subscribe(res => { this.reclamByUser = res ;
-        console.log(' reclamBy user' , res) ;
-      })
-    }
-
-  }
   nextPage(event: any) {
     const request = {};
     request['page'] = event - 1

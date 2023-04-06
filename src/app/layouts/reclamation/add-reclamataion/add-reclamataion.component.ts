@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Reclamation} from '../../../../shared/models/reclamation';
+import {Reclamation} from '../../../../shared/models/Reclamation';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ReclamationService} from '../../../../shared/service/reclamation/reclamation.service';
 import {finalize} from 'rxjs/operators';

@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './user/users.component';
 import { RoleComponent } from './role/role.component';
 import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
+import { PasserReclamationComponent } from './passer-reclamation/passer-reclamation.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { DemandeInscriptionComponent } from './demande-inscription/demande-inscr
     UsersComponent,
     RoleComponent,
     DemandeInscriptionComponent,
+    PasserReclamationComponent,
 
 
   ]

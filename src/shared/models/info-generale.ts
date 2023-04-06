@@ -7,5 +7,7 @@ export class InfoGenerale {
     email: string
     telephone: number
     nif: string
+    activites: string
+
 
 }

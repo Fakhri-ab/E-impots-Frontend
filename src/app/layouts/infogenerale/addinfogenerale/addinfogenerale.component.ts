@@ -19,6 +19,7 @@ export class AddinfogeneraleComponent implements OnInit {
     adressePostale: new FormControl(''),
     telephone: new FormControl(''),
     email: new FormControl(''),
+    activites: new FormControl(''),
   });
 
   private x: any;

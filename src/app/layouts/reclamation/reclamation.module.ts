@@ -19,6 +19,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
+    // tslint:disable-next-line:max-line-length
   declarations: [ReclamationComponent, AddReclamataionComponent, DetailReclamationComponent, EditReclamationComponent, ImprimerReclamationComponent],
     imports: [
         CommonModule,

@@ -99,13 +99,21 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label>types</label>
+                                <select  class="input-group form-group-no-border input-lg btn-round" style="height: 38px; font-size: 20px;"
+                                         [formControlName]="'activites'"
+                                         formControlName="activites"  id="activites" >
+                                    <option value="Commerciale">Commerciale</option>
+                                    <option value="Professionnelle">Professionnelle</option>
+                                    <option value="Agricole">Agricole</option>
+                                </select>
+                            </div>
 
 
                         </div>
                         <hr>
-                        <br>
-
-                        <button type="submit" class="btn btn-primary right">sauvegarder</button>
+                        <button type="submit" class="btn btn-primary btn-simple btn-round">sauvegarder</button>
                     </form>
                 </div>
             </div>
