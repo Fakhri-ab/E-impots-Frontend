@@ -38,9 +38,9 @@ export class ReclamationService {
   }
 
   // tslint:disable-next-line:no-shadowed-variable
-  modifyReclamation(idu: any, idr: any , Reclamation: any) {
+  modifyReclamation( idr: any , Reclamation: any) {
     // @ts-ignore
-    return this.httpclient.put<Reclamation>(this.url + 'modify-Reclamation/' + idu + '/' + idr , Reclamation )
+    return this.httpclient.put<Reclamation>(this.url + 'modify-Reclamation/' + idr , Reclamation )
   }
 
   DeleteReclamation(id: any) {

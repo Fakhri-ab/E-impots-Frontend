@@ -54,13 +54,21 @@ export class EditinfoComponent implements OnInit {
     }
 
   updateInfo( ) {
-    this.infogenraleService.updateinfo(1 , this.infoForm.value )
-        .subscribe(data => {
-          console.log('ena data', this.infoForm.value);
-         // this.info = new InfoGenerale();
-         // this.toastr.showNotification('top', 'right', 1, 'Categorie:', '', '...Categorie modifié....')
-          this.gotoinfo();
-        })
+
+      this.userService.getuser().subscribe(res => {
+          this.user = res
+          // this.id = res.id
+          console.log('userlelinfo', res)
+
+          this.infogenraleService.updateinfo(this.user.id , this.infoForm.value )
+              .subscribe(data => {
+                  console.log('ena data', this.infoForm.value);
+                  // this.info = new InfoGenerale();
+                  // this.toastr.showNotification('top', 'right', 1, 'Categorie:', '', '...Categorie modifié....')
+                  this.gotoinfo();
+              })
+      })
+
   }
 
   gotoinfo() {

@@ -14,7 +14,7 @@ export class EditReclamationComponent implements OnInit {
 
   x: any
   idu: any
-  idr: any
+  user: any
   rec: Reclamation
 
   ReclamationForm = new FormGroup({
@@ -22,7 +22,7 @@ export class EditReclamationComponent implements OnInit {
     description: new FormControl(''),
     typeReclamation: new FormControl(''),
     dateOfReclam: new FormControl(''),
-    Status: new FormControl(''),
+    status: new FormControl(''),
   //  User: new FormControl('')
   });
   constructor(private router: Router, private router1: ActivatedRoute,
@@ -38,12 +38,21 @@ export class EditReclamationComponent implements OnInit {
   }
 
   updateReclamation() {
-    this.reclamationService.modifyReclamation(this.x.id, this.rec.idReclamation, this.ReclamationForm.value)
-        .subscribe(data => {
-          console.log(data);
-          this.rec = new Reclamation();
-          this.gotoList();
-        }, error => console.log(error));
+    this.userService.getuser().subscribe(res => {
+      this.user = res
+      // this.id = res.id
+      console.log('userlelinfo', res)
+
+      this.reclamationService.modifyReclamation(this.user.id, this.ReclamationForm.value)
+          .subscribe(data => {
+            console.log(data);
+            this.rec = data;
+            // this.gotoList();
+          }, error => console.log(error));
+      this.router.navigate(['admin/reclamation']);
+
+    })
+
   }
 
   submit(f) {

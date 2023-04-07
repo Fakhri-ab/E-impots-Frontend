@@ -5,7 +5,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="title">Ajouter Nouveau Reclamation</h2>
+                    <h2 class="title">Modifier Reclamation</h2>
                 </div>
                 <div class="card-body">
                     <form #f="ngForm" [formGroup]="ReclamationForm" (ngSubmit)="submit(f)" >
@@ -36,22 +36,25 @@
                             <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label>Type</label>
-                                    <input type="text"
-                                           [(ngModel)]="rec.typeReclamation"
-                                           [formControlName]="'typeReclamation'"
-                                           formControlName="typeReclamation"
-                                           class="form-control" placeholder=" description " value="">
+                                    <select  class="input-group form-group-no-border input-lg btn-round " style="height: 38px; font-size: 19px;padding-top: 5px"
+                                             [formControlName]="'typeReclamation'" [(ngModel)]="rec.typeReclamation"
+                                             formControlName="typeReclamation"  id="typeReclamation" >
+                                        <option value="Autres">Autres</option>
+                                        <option value="Date_expiree">Date_expiree</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="col-md-3 px-1">
                                 <div class="form-group">
                                     <label>Status</label>
-                                    <input type="text"
-                                           [(ngModel)]="rec.status"
-                                           [formControlName]="'Status'"
-                                           formControlName="Status"
-                                           class="form-control" placeholder=" Status " value="">
+                                    <select  class="input-group form-group-no-border input-lg btn-round " style="height: 38px; font-size: 19px;padding-top: 5px"
+                                             [formControlName]="'status'" [(ngModel)]="rec.status"
+                                             formControlName="status"  id="status" >
+                                        <option value="Nouvelle">Nouvelle</option>
+                                        <option value="En_attente">En_attente</option>
+                                        <option value="Traité">Traité</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -83,7 +86,7 @@
                         </div>
 
 
-                        <button type="submit"  class="btn btn-primary right">Save</button>
+                        <button type="submit"  class="btn btn-primary btn-simple btn-round">Save</button>
                     </form>
                 </div>
             </div>

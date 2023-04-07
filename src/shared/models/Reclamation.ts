@@ -5,6 +5,6 @@ export class Reclamation {
     description: string ;
     typeReclamation: string;
     DateOfReclam: Date;
-    Status: string;
+    status: string;
     user: UserModule
 }
