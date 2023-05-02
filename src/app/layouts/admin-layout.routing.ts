@@ -7,6 +7,9 @@ import { RoleComponent } from './role/role.component';
 import { AuthGuard } from 'shared/guard/auth.guard';
 import {DemandeInscriptionComponent} from './demande-inscription/demande-inscription.component';
 import {InfogeneraleComponent} from './infogenerale/infogenerale.component';
+import {ObligationfiscaleComponent} from './obligationfiscale/obligationfiscale.component';
+import {BackofficedeclarationIRPPComponent} from './backofficedeclaration-irpp/backofficedeclaration-irpp.component';
+import {MesDeclarationIRPPComponent} from './mes-declaration-irpp/mes-declaration-irpp.component';
 
 
 // @ts-ignore
@@ -82,6 +85,35 @@ export const AdminLayoutRoutes: Routes = [
             {
                 path: '',
                 loadChildren: () => import('./passer-reclamation/passer-reclamation.module').then(x => x.PasserReclamationModule),
+
+            }]} ,
+    {
+        path: 'obligationfiscale',
+        component: ObligationfiscaleComponent ,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./obligationfiscale/obligationfiscale.module').then(x => x.ObligationfiscaleModule),
+
+            }]},
+    {
+        path: 'backofficedeclarationIRPP',
+        component: BackofficedeclarationIRPPComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./backofficedeclaration-irpp/backofficedeclaration-irpp.module').then(x => x.BackofficedeclarationIRPPModule),
+
+            }]},
+    {
+        path: 'MesDeclarationIRPP',
+        component: MesDeclarationIRPPComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./mes-declaration-irpp/mes-declaration-irpp.module').then(x => x.MesDeclarationIRPPModule),
 
             }]}
 

@@ -1,0 +1,97 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">  Mes Declarations</h2>
+                </div>
+                <form>
+                    <div class="input-group no-border col-md-4">
+                        <input type="text" value="" class="form-control" placeholder="Search... " (ngModelChange)="search($event)" [ngModel]="key" name="key"   >
+                        <div class="input-group-append">
+
+                            <div class="input-group-text">
+                                <i class="now-ui-icons ui-1_zoom-bold"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="card-header">
+                    <button _ngcontent-c3 (click)="goToAdd()" class="btn btn-primary btn-simple btn-round" type="button">
+                        <i class="now-ui-icons ui-1_simple-add"></i>ajouter declaration</button>
+                </div>
+                <div class="card-body" >
+                    <div class="table-responsive">
+                        <table class="table" >
+                            <thead class=" text-primary">
+                            <th class="text-left">
+                                FullName
+                            </th>
+                            <th class="text-left">
+                                salaires
+                            </th>
+                            <th class="text-left">
+                                revenuesFonciers
+                            </th>
+                            <th class="text-left">
+                                RCM
+                            </th>
+                            <th class="text-left">
+                                BIC
+                            </th>
+                            <th class="text-left">
+                                BNC
+                            </th>
+                            <th class="text-left">
+                                pcvmi
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                            </thead>
+                            <tbody   >
+                            <tr  *ngFor="let dec of alldec"  >
+                                <td >
+                                    {{dec.fullName}}
+                                </td>
+                                <td   >
+                                    {{dec.salaires}}
+                                </td>
+                                <td >
+                                    {{dec.revenuesFonciers}}
+                                </td >
+                                <td  >
+                                    {{dec.revenusCapitauxMobiliers}}
+                                </td>
+                                <td  >
+                                    {{dec.beneficesIndustrielsCommerciaux}}
+                                </td>
+                                <td>
+                                    {{dec.beneficesNnonCommerciaux}}
+                                </td>
+                                <td>
+                                    {{dec.pcvmi}}
+                                </td>
+                                <td>
+                                    <button _ngcontent-c3  class="btn btn-primary btn-simple btn-round" type="button">
+                                        <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <ngb-pagination
+                                [boundaryLinks]="true"  [maxSize]="3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="nextPage($event);" class="pagination-primary">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

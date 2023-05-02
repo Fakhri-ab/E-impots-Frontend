@@ -13,6 +13,9 @@ import { UsersComponent } from './user/users.component';
 import { RoleComponent } from './role/role.component';
 import { DemandeInscriptionComponent } from './demande-inscription/demande-inscription.component';
 import { PasserReclamationComponent } from './passer-reclamation/passer-reclamation.component';
+import {ObligationfiscaleComponent} from './obligationfiscale/obligationfiscale.component';
+import { BackofficedeclarationIRPPComponent } from './backofficedeclaration-irpp/backofficedeclaration-irpp.component';
+import { MesDeclarationIRPPComponent } from './mes-declaration-irpp/mes-declaration-irpp.component';
 
 
 @NgModule({
@@ -34,6 +37,9 @@ import { PasserReclamationComponent } from './passer-reclamation/passer-reclamat
     RoleComponent,
     DemandeInscriptionComponent,
     PasserReclamationComponent,
+    ObligationfiscaleComponent,
+    BackofficedeclarationIRPPComponent,
+    MesDeclarationIRPPComponent
 
 
   ]

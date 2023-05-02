@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ListUsersComponent} from '../user/list-users/list-users.component';
 import {RoleGuard} from '../../../shared/guard/roleguard';
 import {ReclamationComponent} from './reclamation.component';
 import {AddReclamataionComponent} from './add-reclamataion/add-reclamataion.component';

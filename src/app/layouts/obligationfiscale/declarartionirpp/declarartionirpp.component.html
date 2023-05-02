@@ -1,0 +1,91 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Impôt sur le Revenu des Personnes Physiques</h4>
+        </div>
+        <div class="card-body">
+
+            <form  [formGroup]="DeclarationIRppForm">
+                <div class="row">
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Nom et prenom </label>
+                            <input type="text"
+                                   formControlName="fullName"
+                                   class="form-control" placeholder="Nom et prenom  " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Salaires </label>
+                            <input type="text"
+                                   formControlName="salaires"
+                                   class="form-control" placeholder="Salaires  " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Revenus fonciers (loyers perçus)</label>
+                            <input type="text"
+                                   formControlName="revenuesFonciers"
+                                   class="form-control" placeholder="Revenus fonciers (loyers perçus) " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Revenus de capitaux mobiliers</label>
+                            <input type="text"
+                                   formControlName="revenusCapitauxMobiliers"
+                                   class="form-control" placeholder="Revenus de capitaux mobiliers " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Bénéfices industriels et commerciaux</label>
+                            <input type="text"
+                                   formControlName="beneficesIndustrielsCommerciaux"
+                                   class="form-control" placeholder="Bénéfices industriels et commerciaux " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Bénéfices non commerciaux  </label>
+                            <input type="text"
+                                   formControlName="beneficesNnonCommerciaux"
+                                   class="form-control" placeholder="Bénéfices non commerciaux   " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 px-1">
+                        <div class="form-group">
+                            <label>Plus-values sur cessions de valeurs mobilières ou immobilières </label>
+                            <input type="text"
+                                   formControlName="pcvmi"
+                                   class="form-control" placeholder="Plus-values sur cessions de valeurs mobilières ou immobilières  " value="">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+                <hr>
+                <br>
+
+                <button type="button"  (click)="addAndCalculIRPP()" class="btn btn-primary right">Ajouter</button>
+            </form>
+
+        </div>
+    </div>
+</div>

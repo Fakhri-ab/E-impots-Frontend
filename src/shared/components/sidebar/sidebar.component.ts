@@ -20,7 +20,10 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/reclamation', title: 'reclamation',  icon: 'users_single-02', class: '', roleName: ['admin'] },
     { path: '/admin/demandes', title: 'Demandes inscription',  icon: 'users_single-02', class: '', roleName: ['admin'] },
     { path: '/admin/infosGenerales', title: 'information-generale',  icon: 'users_single-02', class: '', roleName: ['User'] },
-    { path: '/admin/passerReclamation', title: 'passer-reclamation',  icon: 'users_single-02', class: '', roleName: ['User'] }
+    { path: '/admin/passerReclamation', title: 'passer-reclamation',  icon: 'users_single-02', class: '', roleName: ['User'] },
+    { path: '/admin/obligationfiscale', title: 'Mes obligations fiscales',  icon: 'users_single-02', class: '', roleName: ['User'] },
+    { path: '/admin/backofficedeclarationIRPP', title: 'gérer declarations',  icon: 'users_single-02', class: '', roleName: ['admin'] },
+    { path: '/admin/MesDeclarationIRPP', title: 'Mes declarations ',  icon: 'users_single-02', class: '', roleName: ['User'] },
 
 
 
