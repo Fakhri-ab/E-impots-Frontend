@@ -10,6 +10,7 @@ import {InfogeneraleComponent} from './infogenerale/infogenerale.component';
 import {ObligationfiscaleComponent} from './obligationfiscale/obligationfiscale.component';
 import {BackofficedeclarationIRPPComponent} from './backofficedeclaration-irpp/backofficedeclaration-irpp.component';
 import {MesDeclarationIRPPComponent} from './mes-declaration-irpp/mes-declaration-irpp.component';
+import {PaymentComponent} from './payment/payment.component';
 
 
 // @ts-ignore
@@ -114,6 +115,16 @@ export const AdminLayoutRoutes: Routes = [
                 path: '',
                 // tslint:disable-next-line:max-line-length
                 loadChildren: () => import('./mes-declaration-irpp/mes-declaration-irpp.module').then(x => x.MesDeclarationIRPPModule),
+
+            }]},
+    {
+        path: 'payment',
+        component: PaymentComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./payment/payment.module').then(x => x.PaymentModule),
 
             }]}
 

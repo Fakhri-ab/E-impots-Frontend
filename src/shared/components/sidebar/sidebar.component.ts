@@ -24,6 +24,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/obligationfiscale', title: 'Mes obligations fiscales',  icon: 'users_single-02', class: '', roleName: ['User'] },
     { path: '/admin/backofficedeclarationIRPP', title: 'gérer declarations',  icon: 'users_single-02', class: '', roleName: ['admin'] },
     { path: '/admin/MesDeclarationIRPP', title: 'Mes declarations ',  icon: 'users_single-02', class: '', roleName: ['User'] },
+    { path: '/admin/payment', title: 'payment ',  icon: 'users_single-02', class: '', roleName: ['User'] },
 
 
 
