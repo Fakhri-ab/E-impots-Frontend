@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { myToastrService } from 'shared/service/toastr/toastr.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -24,7 +25,8 @@ export class AddUserComponent implements OnInit {
     private rolesService: RolesService,
     private userService: UserService,
     private fb: FormBuilder,
-    private toastr: myToastrService
+    private toastr: myToastrService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -59,7 +61,8 @@ export class AddUserComponent implements OnInit {
       x => {this.userForm.reset(),
         this.showdetail = false
         this.toastr.showNotification('top', 'right', 2, 'utilisateur ', 'Ajouté avec succees', '.......')
-
+        // tslint:disable-next-line:no-unused-expression
+        this.router.navigate(['admin/user/list-u'])
       }),
       e => console.log(e)
     } else {

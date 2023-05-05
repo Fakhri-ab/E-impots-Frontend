@@ -34,6 +34,13 @@ export class ListUsersComponent implements OnInit {
     this.router.navigate(['admin/user/details/', id])
    }
 
+   goToAdd() {
+       this.router.navigate(['admin/user/add'])
+   }
+    goToEdit() {
+        this.router.navigate(['admin/user/add'])
+    }
+
   nextPage(event: any) {
     const request = {};
     request['page'] = event - 1

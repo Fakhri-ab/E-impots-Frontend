@@ -6,7 +6,7 @@ export class DeclarationIRPP {
     beneficesIndustrielsCommerciaux: number
     beneficesNnonCommerciaux: number
     pcvmi: number
-    FullName: string
+    fullName: string
     montanpayer: number
     dateOfDeclarationIRPP: Date
 }

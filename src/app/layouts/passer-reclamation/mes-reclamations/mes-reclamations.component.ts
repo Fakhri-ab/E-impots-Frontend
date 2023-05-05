@@ -36,4 +36,8 @@ export class MesReclamationsComponent implements OnInit {
     this.router.navigateByUrl('/admin/passerReclamation/passerReclamation') ;
   }
 
+  goTodetail(id) {
+    this.router.navigate(['admin/passerReclamation/DetailReclamation', id])
+  }
+
 }

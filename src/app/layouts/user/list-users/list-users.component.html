@@ -19,6 +19,10 @@
             </div>
           </div>
         </form>
+        <div class="card-header">
+          <button _ngcontent-c3 (click)="goToAdd()" class="btn btn-primary btn-simple btn-round" type="button">
+            <i class="now-ui-icons ui-1_simple-add"></i>Ajouter Utilisateur</button>
+        </div>
         <div class="card-body" >
           <div class="table-responsive">
             <table class="table" >
@@ -60,8 +64,8 @@
                     {{user.role[0].roleName}}
                   </td>
                   <td>
-                    <button class="btn btn-warning" style="background-color: rgb(255, 187, 0);"><i style="font-size: 15px; " class="now-ui-icons ui-1_settings-gear-63"></i></button> &nbsp;
-                    <button class="btn btn-danger " style="background-color: red;"  (click)="deleteuser(user)"><i class="now-ui-icons ui-1_simple-remove"></i></button>
+                 <!--   <button class="btn btn-primary btn-simple btn-round" ><i class="now-ui-icons design-2_ruler-pencil"></i></button> &nbsp;-->
+                    <button class="btn btn-primary btn-simple btn-round"   (click)="deleteuser(user)"><i class="now-ui-icons ui-1_simple-remove"></i></button>
 
                   </td>
                 </tr>
