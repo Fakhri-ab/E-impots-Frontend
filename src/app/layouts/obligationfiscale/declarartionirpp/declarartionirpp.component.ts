@@ -33,10 +33,13 @@ export class DeclarartionirppComponent implements OnInit {
   }
 
   addAndCalculIRPP() {
-    this.DeclarationIRppForm.value.dateOfDeclarationIRPP = new Date();
-    this.DeclarationIRppForm.value.montanpayer = this.gettauxetmantantApayer() ;
-    console.log('form value ', this.DeclarationIRppForm.value)
-    this.irrpserv.createDeclarationIRPP(this.x.id, this.DeclarationIRppForm.value).subscribe() ;
+    if (this.DeclarationIRppForm.valid) {
+      this.DeclarationIRppForm.value.dateOfDeclarationIRPP = new Date();
+      this.DeclarationIRppForm.value.montanpayer = this.gettauxetmantantApayer() ;
+      console.log('form value ', this.DeclarationIRppForm.value)
+      this.irrpserv.createDeclarationIRPP(this.x.id, this.DeclarationIRppForm.value).subscribe() ;
+    }
+    this.router.navigateByUrl('/admin/MesDeclarationIRPP/liste') ;
   }
 
   gettauxetmantantApayer() {

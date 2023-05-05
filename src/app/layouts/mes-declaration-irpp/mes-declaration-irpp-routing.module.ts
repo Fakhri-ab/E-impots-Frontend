@@ -5,6 +5,7 @@ import {RoleGuard} from '../../../shared/guard/roleguard';
 import {MesDeclarationIRPPComponent} from './mes-declaration-irpp.component';
 import {ListeDeclarationIRPPComponent} from '../backofficedeclaration-irpp/liste-declaration-irpp/liste-declaration-irpp.component';
 import {MalisteComponent} from './maliste/maliste.component';
+import {ItemIRPPComponent} from './item-irpp/item-irpp.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,8 @@ const routes: Routes = [
   {path: 'MesDeclarationIRPP', component: MesDeclarationIRPPComponent,
     canActivate: [RoleGuard], data: {role: 'User'}},
   {path: 'liste', component: MalisteComponent,
+    canActivate: [RoleGuard], data: {role: 'User'}},
+  {path: 'itemIRPP/:id', component: ItemIRPPComponent,
     canActivate: [RoleGuard], data: {role: 'User'}}
 ];
 

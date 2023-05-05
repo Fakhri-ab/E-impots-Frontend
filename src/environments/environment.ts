@@ -5,5 +5,7 @@
 
 export const environment = {
   production: false,
-  url: '/api/'
+  url: '/api/',
+  stripe: 'pk_test_51N3iERK2dt7NKQz9m6dAVUcHwSCoJPcaVznXOOSaQ2tyIGVZ7K3kOPQpvqVP4khZ6jCRRtPfX7La5TpshhdnIsdn007SCiN81b',
+ // serverUrl: '/api',
 };

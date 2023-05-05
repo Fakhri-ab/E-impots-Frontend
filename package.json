@@ -30,6 +30,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "@ng-plus/signature-pad": "^1.0.7",
+    "@stripe/stripe-js": "^1.52.1",
     "@syncfusion/ej2-angular-inputs": "^20.1.61",
     "ajv": "7.0.1",
     "ajv-keywords": "4.0.0",

@@ -33,7 +33,13 @@ export class MalisteComponent implements OnInit {
     })
   }
 
-  goToAdd(){
+  goToAdd() {
     this.router.navigateByUrl('/admin/obligationfiscale/declarationIRPP') ;
+  }
+
+  goToItemIRPP(id) {
+    // @ts-ignore
+    this.router.navigate(['/admin/MesDeclarationIRPP/itemIRPP/', id]) ;
+
   }
 }

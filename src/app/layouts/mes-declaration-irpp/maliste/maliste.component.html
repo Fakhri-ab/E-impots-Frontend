@@ -53,7 +53,7 @@
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldec"  >
+                            <tr  *ngFor="let dec of alldec" (click)="goToItemIRPP(dec.id)" >
                                 <td >
                                     {{dec.fullName}}
                                 </td>
