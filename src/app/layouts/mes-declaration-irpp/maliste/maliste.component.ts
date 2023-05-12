@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {UserService} from '../../../../shared/service/user.service';
 import {IrppService} from '../../../../shared/service/IRPP/irpp.service';
+import {Reclamation} from '../../../../shared/models/Reclamation';
+import {DeclarationIRPP} from '../../../../shared/models/declaration-irpp';
 
 @Component({
   selector: 'app-maliste',
@@ -34,12 +36,18 @@ export class MalisteComponent implements OnInit {
   }
 
   goToAdd() {
-    this.router.navigateByUrl('/admin/obligationfiscale/declarationIRPP') ;
+    this.router.navigateByUrl('/admin/obligationfiscale') ;
   }
 
   goToItemIRPP(id) {
     // @ts-ignore
     this.router.navigate(['/admin/MesDeclarationIRPP/itemIRPP/', id]) ;
 
+  }
+
+  deletedeclrationIRPP(dec: DeclarationIRPP) {
+    this.irrpserv.deleteDeclarationIRPP(dec.id).subscribe(res => {console.log(res);
+      this.router.navigate(['/admin/MesDeclarationIRPP/liste']);
+    })
   }
 }

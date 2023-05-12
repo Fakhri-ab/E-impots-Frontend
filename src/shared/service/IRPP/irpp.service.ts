@@ -34,4 +34,8 @@ export class IrppService {
   getDeclarationIRPPByid(id) {
     return this.httpclient.get<DeclarationIRPP>(this.url + 'retrieve-DeclarationIRPP/' + id)
   }
+
+  deleteDeclarationIRPP(id) {
+    return this.httpclient.delete<DeclarationIRPP>(this.url + 'deleteDeclarationIRPP/' + id)
+  }
 }

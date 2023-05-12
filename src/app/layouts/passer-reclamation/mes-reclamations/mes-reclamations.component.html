@@ -27,9 +27,7 @@
                     <div class="table-responsive">
                         <table class="table" >
                             <thead class=" text-primary">
-                            <th class="text-left">
-                                idReclamation
-                            </th>
+
                             <th class="text-left">
                                 Description
                             </th>
@@ -47,28 +45,25 @@
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let rec of allReclam" (click)="goTodetail(rec.idReclamation)" >
-                                <td >
-                                    {{rec.idReclamation}}
-                                </td>
-                                <td  style="cursor: pointer ;" >
+                            <tr  *ngFor="let rec of allReclam"  >
+                                <td (click)="goTodetail(rec.idReclamation)" style="cursor: pointer ;" >
                                     {{rec.description}}
                                 </td>
-                                <td style="cursor: pointer">
+                                <td (click)="goTodetail(rec.idReclamation)" style="cursor: pointer">
                                     {{rec.dateOfReclam}}
                                 </td >
-                                <td  style="cursor: pointer">
+                                <td (click)="goTodetail(rec.idReclamation)" style="cursor: pointer">
                                     {{rec.status}}
                                 </td>
-                                <td  style="cursor: pointer">
+                                <td (click)="goTodetail(rec.idReclamation)"  style="cursor: pointer">
                                     {{rec.typeReclamation}}
                                 </td>
 
                                 <td>
-                                    <button class="btn btn-primary btn-simple btn-round" (click)="goToEdit(rec.idReclamation)" >
+                              <!--      <button class="btn btn-primary btn-simple btn-round" (click)="goToEdit(rec.idReclamation)" >
                                         <i class="now-ui-icons design-2_ruler-pencil"></i>
-                                    </button> &nbsp;
-                                    <button _ngcontent-c3 (click)="deleteReclamation(rec)" class="btn btn-primary btn-simple btn-round" type="button">
+                                    </button> &nbsp;-->
+                                    <button  (click)="deleteReclamation(rec)" class="btn btn-primary btn-simple btn-round" type="button">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
                                 </td>

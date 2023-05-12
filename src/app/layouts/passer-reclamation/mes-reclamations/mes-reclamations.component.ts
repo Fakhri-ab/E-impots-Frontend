@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ReclamationService} from '../../../../shared/service/reclamation/reclamation.service';
 import {UserService} from '../../../../shared/service/user.service';
+import {Reclamation} from '../../../../shared/models/Reclamation';
 
 @Component({
   selector: 'app-mes-reclamations',
@@ -16,6 +17,13 @@ export class MesReclamationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getreclambyiduser();
+  }
+
+  deleteReclamation(rec: Reclamation) {
+    this.reclamationService.DeleteReclamation(rec.idReclamation).subscribe(res => {console.log(res);
+      this.getreclambyiduser();
+       this.router.navigate(['/admin/passerReclamation/mesReclamations']);
+    })
   }
 
   getreclambyiduser() {

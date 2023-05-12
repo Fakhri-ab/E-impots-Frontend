@@ -25,15 +25,19 @@
         <label class="description">{{dec.pcvmi | currency: 'USD'}}</label></p>
 
     <p class="text-title pref">Montant a payer:
-        <label class="description">{{dec.montanpayer | currency: 'USD'}}</label></p>
+        <label class="description">{{dec.montanpayer  | currency: 'USD'}} </label></p>
 
 
     <div class="actions">
-       <button class="pref" (click)="gotoliste()">
+       <button class="accept" (click)="gotoliste()">
             Mes Declarations
         </button>
         <button (click)="generatePDF()" class="accept"><i class="now-ui-icons arrows-1_cloud-download-93"></i>
             Download
+        </button>
+
+        <button (click)="pay()" class="accept"><i class="now-ui-icons business_money-coins"></i>
+            payer
         </button>
     </div>
 </div>
