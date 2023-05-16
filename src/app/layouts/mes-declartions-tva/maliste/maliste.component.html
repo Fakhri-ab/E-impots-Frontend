@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">  Mes Declarations</h2>
+                    <h2 class="card-title">  Mes Declarations TVA</h2>
                 </div>
                 <form>
                     <div class="input-group no-border col-md-4">
@@ -31,55 +31,73 @@
                                 Nom_Prenom
                             </th>
                             <th class="text-left">
-                                salaires
+                                Ventes_Soumises_TVANormale
                             </th>
                             <th class="text-left">
-                                revenues_Fonciers
+                                Ventes_Exonerees
                             </th>
                             <th class="text-left">
-                                Revenus_Capitaux_Mobiliers
+                                Achats_Aupres_Fournisseurs_Etrangers
                             </th>
                             <th class="text-left">
-                                Benefices_Industriels_Commerciaux
+                                Achats_Aupres_Fournisseurs_Soumis_TVANormale
                             </th>
                             <th class="text-left">
-                                Benefices_Non_Commerciaux
+                                Charges_Deductibles
                             </th>
                             <th class="text-left">
-                                Plus_values_cessions_valeurs_mobilières_ou_immobilières
+                                date_Declaration_TVA
                             </th>
                             <th class="text-left">
-                                Montant_A_Payer
+                                Exportations
+                            </th>
+                            <th class="text-left">
+                                Tva_collectee
+                            </th>
+                            <th class="text-left">
+                                Tva_deductible
+                            </th>
+                            <th class="text-left">
+                                Tva_nette_A_Paye
                             </th>
                             <th>
                                 Actions
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldec" (click)="goToItemIRPP(dec.id)" >
+                            <tr  *ngFor="let dec of alldec"  (click)="goToItemTVA(dec.id)" >
                                 <td >
                                     {{dec.fullName}}
                                 </td>
-                                <td   >
-                                    {{dec.salaires}}
+                                <td >
+                                    {{dec.ventesSoumisesTVANormale}}
                                 </td>
                                 <td >
-                                    {{dec.revenuesFonciers}}
+                                    {{dec.ventesExonerees}}
+                                </td>
+                                <td   >
+                                    {{dec.achatsAupresFournisseursEtrangers}}
+                                </td>
+                                <td >
+                                    {{dec.achatsAupresFournisseursSoumisTVANormale}}
                                 </td >
                                 <td  >
-                                    {{dec.revenusCapitauxMobiliers}}
+                                    {{dec.chargesDeductibles}}
                                 </td>
                                 <td  >
-                                    {{dec.beneficesIndustrielsCommerciaux}}
+                                    {{dec.dateOfDeclarationTVA}}
                                 </td>
                                 <td>
-                                    {{dec.beneficesNnonCommerciaux}}
+                                    {{dec.exportations}}
                                 </td>
                                 <td>
-                                    {{dec.pcvmi}}
+                                    {{dec.tvacollectee}}
                                 </td>
                                 <td>
-                                    {{dec.montanpayer}}
+                                    {{dec.tvadeductible}}
+                                </td>
+                                <td>
+                                    {{dec.tvanetteAPaye}}
                                 </td>
                                 <td>
                                     <button _ngcontent-c3  (click)="deletedeclrationIRPP(dec)" class="btn btn-primary btn-simple btn-round" type="button">

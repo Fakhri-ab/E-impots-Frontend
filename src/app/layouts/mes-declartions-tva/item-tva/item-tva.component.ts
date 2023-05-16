@@ -1,49 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {IrppService} from '../../../../shared/service/IRPP/irpp.service';
+import {TvaService} from '../../../../shared/service/TVA/tva.service';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-import {HttpClient} from '@angular/common/http';
 import {loadStripe} from '@stripe/stripe-js';
 import {environment} from '../../../../environments/environment';
-
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
+import {HttpClient} from '@angular/common/http';
 @Component({
-  selector: 'app-item-irpp',
-  templateUrl: './item-irpp.component.html',
-  styleUrls: ['./item-irpp.component.css']
+  selector: 'app-item-tva',
+  templateUrl: './item-tva.component.html',
+  styleUrls: ['./item-tva.component.css']
 })
-export class ItemIRPPComponent implements OnInit {
+export class ItemTvaComponent implements OnInit {
 
   stripePromise = loadStripe(environment.stripe);
   url = environment.url
   id: any
   dec: any
-  constructor(private router: Router, private router1: ActivatedRoute , private irrpserv: IrppService, private http: HttpClient) {
+  constructor(private router: Router, private router1: ActivatedRoute , private tvaService: TvaService, private http: HttpClient) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
   }
 
   ngOnInit(): void {
     this.router1.paramMap.subscribe(paramMap => {
       this.id = paramMap.get('id');
-      this.irrpserv.getDeclarationIRPPByid(this.id).subscribe(cat => {this.dec = cat;
-        console.log('IRPPbyid' , cat)})
+      this.tvaService.getDeclarationTVAByid(this.id).subscribe(cat => {this.dec = cat;
+        console.log('TVAbyid' , cat)})
     })
   }
 
   gotoliste() {
-    this.router.navigate(['admin/MesDeclarationIRPP/liste'])
+    this.router.navigate(['admin/MesDeclarationTVA/liste'])
   }
 
-  async pay(): Promise<void> {
+  async pay1(): Promise<void> {
     // here we create a payment object
     const payment = {
-      name: 'Declaration IRPP',
+      name: 'Declaration TVA',
       currency: 'usd',
       // amount on cents *10 => to be on dollar
-      amount: parseFloat(this.dec.montanpayer) * 100 ,
+      amount: parseFloat(this.dec.tvanetteAPaye) * 100 ,
       quantity: '1',
       cancelUrl: 'http://localhost:4200/admin/payment/Cancel',
       successUrl: 'http://localhost:4200/admin/payment/Success',
@@ -63,13 +59,13 @@ export class ItemIRPPComponent implements OnInit {
   }
 
   generatePDF() {
-    this.irrpserv.getDeclarationIRPPByid(this.id).subscribe(dec => {
+    this.tvaService.getDeclarationTVAByid(this.id).subscribe(dec => {
       // @ts-ignore
       // @ts-ignore
       const docDefinition = {
         content: [
           {
-            text: 'Déclaration d\'impôt sur le Revenu des Personnes Physiques',
+            text: 'Declaration taxe sur la valeur ajoutée',
             bold: true,
             fontSize: 20,
             alignment: 'center',
@@ -80,8 +76,8 @@ export class ItemIRPPComponent implements OnInit {
               headerRows: 1,
               widths: ['*', '*'],
               body: [
-                ['Nom et Prenom', 'salaires '],
-                [dec.fullName, dec.salaires]
+                ['Nom et Prenom', 'Ventes Soumises TVA Normale '],
+                [dec.fullName, dec.ventesSoumisesTVANormale]
               ]
             },
             tableHeader: {
@@ -102,8 +98,8 @@ export class ItemIRPPComponent implements OnInit {
               headerRows: 1,
               widths: ['*', '*'],
               body: [
-                ['Revenues Fonciers', 'Revenus Capitaux Mobiliers'],
-                [dec.revenuesFonciers, dec.revenusCapitauxMobiliers]
+                ['Ventes_Exonerees', 'Achats Aupres Fournisseurs Etrangers  '],
+                [dec.ventesExonerees, dec.achatsAupresFournisseursEtrangers]
               ]
             },
             tableHeader: {
@@ -124,8 +120,8 @@ export class ItemIRPPComponent implements OnInit {
               headerRows: 1,
               widths: ['*', '*'],
               body: [
-                ['Benefices Industriels Commerciaux', 'Benefices Non Commerciaux'],
-                [dec.beneficesIndustrielsCommerciaux, dec.beneficesNnonCommerciaux]
+                ['Achats Aupres Fournisseurs Soumis TVANormale', 'Charges Deductibles   '],
+                [dec.achatsAupresFournisseursSoumisTVANormale, dec.chargesDeductibles]
               ]
             },
             tableHeader: {
@@ -144,10 +140,10 @@ export class ItemIRPPComponent implements OnInit {
           {
             table: {
               headerRows: 1,
-              widths: ['*'],
+              widths: ['*', '*'],
               body: [
-                ['Plus-values sur cessions de valeurs mobilières ou immobilières'],
-                [dec.pcvmi]
+                ['Exportations', 'Tva Collectee '],
+                [dec.exportations, dec.tvacollectee]
               ]
             },
             tableHeader: {
@@ -166,10 +162,10 @@ export class ItemIRPPComponent implements OnInit {
           {
             table: {
               headerRows: 1,
-              widths: ['*'],
+              widths: ['*', '*'],
               body: [
-                ['Montant à payer'],
-                [dec.montanpayer]
+                ['Tva Deductible', 'Tva nette A Paye '],
+                [dec.tvadeductible, dec.tvanetteAPaye]
               ]
             },
             tableHeader: {
@@ -180,7 +176,7 @@ export class ItemIRPPComponent implements OnInit {
             }
           },
           {
-            text: ' Portail E-impots ' + dec.dateOfDeclarationIRPP,
+            text: 'Portail E-impots ' + dec.dateOfDeclarationTVA,
             bold: true,
             fontSize: 15,
             alignment: 'center',
@@ -190,12 +186,8 @@ export class ItemIRPPComponent implements OnInit {
         ]
       };
 
-      pdfMake.createPdf(docDefinition).download('DeclarationIRPP.pdf');
+      pdfMake.createPdf(docDefinition).download('DeclarationTVA.pdf');
     });
   }
-
-
-
-
 
 }

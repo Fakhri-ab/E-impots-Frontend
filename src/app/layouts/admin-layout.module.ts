@@ -16,6 +16,7 @@ import { PasserReclamationComponent } from './passer-reclamation/passer-reclamat
 import {ObligationfiscaleComponent} from './obligationfiscale/obligationfiscale.component';
 import { BackofficedeclarationIRPPComponent } from './backofficedeclaration-irpp/backofficedeclaration-irpp.component';
 import { MesDeclarationIRPPComponent } from './mes-declaration-irpp/mes-declaration-irpp.component';
+import { MesDeclartionsTvaComponent } from './mes-declartions-tva/mes-declartions-tva.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MesDeclarationIRPPComponent } from './mes-declaration-irpp/mes-declarat
     PasserReclamationComponent,
     ObligationfiscaleComponent,
     BackofficedeclarationIRPPComponent,
-    MesDeclarationIRPPComponent
+    MesDeclarationIRPPComponent,
+    MesDeclartionsTvaComponent
 
 
   ]
