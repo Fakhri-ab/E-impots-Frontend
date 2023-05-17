@@ -186,7 +186,7 @@ export class ItemTvaComponent implements OnInit {
         ]
       };
 
-      pdfMake.createPdf(docDefinition).download('DeclarationTVA.pdf');
+      pdfMake.createPdf(docDefinition).download(dec.fullName + 'DeclarationTVA.pdf');
     });
   }
 

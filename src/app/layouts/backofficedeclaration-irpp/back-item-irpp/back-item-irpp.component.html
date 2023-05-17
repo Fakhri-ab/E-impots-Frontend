@@ -1,0 +1,42 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="cookie-card">
+    <span class="title">Declaration d'impôt sur le Revenu des Personnes Physiques</span>
+
+    <p class="text-title">Nom et Prenom :
+        <label class="description">{{dec.fullName}}</label></p>
+
+    <p class="text-title">salaires :
+        <label class="description">{{dec.salaires | currency: 'USD'}}  </label></p>
+
+    <p class="text-title">Revenues Fonciers :
+        <label class="description">{{dec.revenuesFonciers | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Revenus Capitaux Mobiliers :
+        <label class="description">{{dec.revenusCapitauxMobiliers | currency: 'USD'}}</label></p>
+
+    <p class="text-title"> Benefices Industriels Commerciaux :
+        <label class="description">{{dec.beneficesIndustrielsCommerciaux | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Benefices Non Commerciaux :
+        <label class="description">{{dec.beneficesNnonCommerciaux | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Plus-values sur cessions de valeurs mobilières ou immobilières:
+        <label class="description">{{dec.pcvmi | currency: 'USD'}}</label></p>
+
+    <p class="text-title pref">Montant a payer:
+        <label class="description">{{dec.montanpayer  | currency: 'USD'}} </label></p>
+
+
+    <div class="actions">
+        <button class="accept" (click)="gotoliste()">
+            Mes Declarations
+        </button>
+        <button (click)="generatePDF()" class="accept"><i class="now-ui-icons arrows-1_cloud-download-93"></i>
+            Download
+        </button>
+
+    </div>
+</div>
+
+

@@ -12,6 +12,7 @@ import {BackofficedeclarationIRPPComponent} from './backofficedeclaration-irpp/b
 import {MesDeclarationIRPPComponent} from './mes-declaration-irpp/mes-declaration-irpp.component';
 import {PaymentComponent} from './payment/payment.component';
 import {MesDeclartionsTvaComponent} from './mes-declartions-tva/mes-declartions-tva.component';
+import {BackOfficeDeclarationTvaComponent} from './back-office-declaration-tva/back-office-declaration-tva.component';
 
 
 // @ts-ignore
@@ -106,6 +107,16 @@ export const AdminLayoutRoutes: Routes = [
                 path: '',
                 // tslint:disable-next-line:max-line-length
                 loadChildren: () => import('./backofficedeclaration-irpp/backofficedeclaration-irpp.module').then(x => x.BackofficedeclarationIRPPModule),
+
+            }]},
+    {
+        path: 'backofficedeclarationTVA',
+        component: BackOfficeDeclarationTvaComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./back-office-declaration-tva/back-office-declaration-tva.module').then(x => x.BackOfficeDeclarationTvaModule),
 
             }]},
     {

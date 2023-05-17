@@ -10,26 +10,27 @@
         </div>
         <div class="card-body">
           <div class="author">
-            <a href="#">
-              <img class="avatar border-gray" src="../assets/img/u.jpg" alt="...">
+            <a >
+              <img class="avatar border-gray" src="../assets/img/userlogo.jpg" alt="...">
               <h5 class="title">{{user?.userName}}</h5>
             </a>
-            <p class="description">
-                {{user?.role[0].roleName}}
-            </p>
           </div>
           <p class="description text-center">
-            "{{user?.userFName}}
+            {{user?.userFName}}
             <br> {{user?.userLName}}
-            <br> {{user?.email}}
+            <br> {{user?.email}}<br>
+            {{user?.role[0].roleName}}
           </p>
+          <hr>
+          <!--
+          <div class="button-container">
+            <button  class="btn btn-neutral   btn-lg" >
+              Modifier Profile
+            </button>
+          </div> -->
         </div>
-        <hr>
-        <div class="button-container">
-          <!-- <button  class="btn btn-neutral   btn-lg" >
-            Modifier Profile
-          </button> -->
-        </div>
+
+
       </div>
     </div>
 
@@ -38,4 +39,3 @@
   </div>
  </div>
    
-  

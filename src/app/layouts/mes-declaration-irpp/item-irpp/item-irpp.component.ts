@@ -190,7 +190,7 @@ export class ItemIRPPComponent implements OnInit {
         ]
       };
 
-      pdfMake.createPdf(docDefinition).download('DeclarationIRPP.pdf');
+      pdfMake.createPdf(docDefinition).download(dec.fullName + 'DeclarationIRPP.pdf');
     });
   }
 

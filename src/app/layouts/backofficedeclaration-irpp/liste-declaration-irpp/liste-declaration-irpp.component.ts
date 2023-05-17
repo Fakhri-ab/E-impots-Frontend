@@ -24,14 +24,20 @@ export class ListeDeclarationIRPPComponent implements OnInit {
 
   getalldeclarationsIRPP(request) {
     this.irppService.getallDeclarationIRPP(request).subscribe(res => {
-      console.log('liste', res)
+     // console.log('liste', res)
       this.alldecIRPP = res['content']
-      console.log('les DeclarationsIRPP ', res);
-      console.log(' les salaires ', this.alldecIRPP[0].salaires);
+    //  console.log('les DeclarationsIRPP ', res);
+    //  console.log(' les salaires ', this.alldecIRPP[0].salaires);
       console.log('les DeclarationsIRPP men all dec ', this.alldecIRPP);
       this.collectionSize = res['totalElements'];
 
     })
+  }
+
+  goToBackItemIrpp(id) {
+    // @ts-ignore
+    this.router.navigate(['/admin/backofficedeclarationIRPP/BackItemIrpp/', id]) ;
+
   }
 
   nextPage(event: any) {

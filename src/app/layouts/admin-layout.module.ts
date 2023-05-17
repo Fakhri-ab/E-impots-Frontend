@@ -17,6 +17,8 @@ import {ObligationfiscaleComponent} from './obligationfiscale/obligationfiscale.
 import { BackofficedeclarationIRPPComponent } from './backofficedeclaration-irpp/backofficedeclaration-irpp.component';
 import { MesDeclarationIRPPComponent } from './mes-declaration-irpp/mes-declaration-irpp.component';
 import { MesDeclartionsTvaComponent } from './mes-declartions-tva/mes-declartions-tva.component';
+import { BackOfficeDeclarationTvaComponent } from './back-office-declaration-tva/back-office-declaration-tva.component';
+
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { MesDeclartionsTvaComponent } from './mes-declartions-tva/mes-declartion
     ObligationfiscaleComponent,
     BackofficedeclarationIRPPComponent,
     MesDeclarationIRPPComponent,
-    MesDeclartionsTvaComponent
+    MesDeclartionsTvaComponent,
+    BackOfficeDeclarationTvaComponent,
+
 
 
   ]

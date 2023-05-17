@@ -24,32 +24,35 @@
                         <table class="table" >
                             <thead class=" text-primary">
                             <th class="text-left">
-                                FullName
+                                Nom_Prenom
                             </th>
                             <th class="text-left">
                                 salaires
                             </th>
                             <th class="text-left">
-                                revenuesFonciers
+                                revenues_Fonciers
                             </th>
                             <th class="text-left">
-                                RCM
+                                Revenus_Capitaux_Mobiliers
                             </th>
                             <th class="text-left">
-                                BIC
+                                Benefices_Industriels_Commerciaux
                             </th>
                             <th class="text-left">
-                                BNC
+                                Benefices_Non_Commerciaux
                             </th>
                             <th class="text-left">
-                                pcvmi
+                                Plus_values_cessions_valeurs_mobilières_ou_immobilières
+                            </th>
+                            <th class="text-left">
+                                Montant_A_Payer
                             </th>
                             <th>
                                 Actions
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldecIRPP"  >
+                            <tr  *ngFor="let dec of alldecIRPP" (click)="goToBackItemIrpp(dec.id)" >
                                 <td >
                                     {{dec.fullName}}
                                 </td>
@@ -70,6 +73,9 @@
                                 </td>
                                 <td>
                                     {{dec.pcvmi}}
+                                </td>
+                                <td>
+                                    {{dec.montanpayer}}
                                 </td>
                                 <td>
                                     <button _ngcontent-c3  class="btn btn-primary btn-simple btn-round" type="button">

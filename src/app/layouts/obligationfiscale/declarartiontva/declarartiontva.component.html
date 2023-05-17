@@ -1,32 +1,91 @@
 <div class="col-md-12">
     <div class="card">
+        <div class="card-header">
+            <h4>Declaration taxe sur la valeur ajoutée</h4>
+        </div>
         <div class="card-body">
-            <div class="places-buttons">
+
+            <form  [formGroup]="DeclarationTvaForm">
                 <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-                        <h4 class="card-title">
-                            Notifications Places
-                            <p class="category">Click to view notifications</p>
-                        </h4>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 ml-auto mr-auto">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <button class="btn btn-primary btn-block" >Top Left</button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary btn-block" >Top Center</button>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-primary btn-block" >Top Right</button>
-                            </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Nom et prenom </label>
+                            <input type="text"
+                                   formControlName="fullName"
+                                   class="form-control" placeholder="Nom et prenom  " value="">
                         </div>
                     </div>
-                </div>
 
-            </div>
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Achats Aupres Fournisseurs etrangers </label>
+                            <input type="text"
+                                   formControlName="achatsAupresFournisseursEtrangers"
+                                   class="form-control" placeholder="Achats Aupres Fournisseurs etrangers  " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 px-1">
+                        <div class="form-group">
+                            <label>Achats Aupres Fournisseurs Soumis TVANormale</label>
+                            <input type="text"
+                                   formControlName="achatsAupresFournisseursSoumisTVANormale"
+                                   class="form-control" placeholder="Achats Aupres Fournisseurs Soumis TVANormale " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Charges Deductibles</label>
+                            <input type="text"
+                                   formControlName="chargesDeductibles"
+                                   class="form-control" placeholder=" Charges Deductibles " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Exportations</label>
+                            <input type="text"
+                                   formControlName="exportations"
+                                   class="form-control" placeholder="Exportations " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Ventes Exonerees  </label>
+                            <input type="text"
+                                   formControlName="ventesExonerees"
+                                   class="form-control" placeholder=" Ventes Exonerees   " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 px-1">
+                        <div class="form-group">
+                            <label>Ventes Soumises TVA Normale </label>
+                            <input type="text"
+                                   formControlName="ventesSoumisesTVANormale"
+                                   class="form-control" placeholder="Ventes Soumises TVA Normale  " value="">
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+                <hr>
+                <br>
+
+                <button type="button"  (click)="addAndCalculTVAnetteApaye()" class="btn btn-primary right">Ajouter</button>
+            </form>
+
         </div>
     </div>
 </div>

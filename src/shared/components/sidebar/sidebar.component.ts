@@ -23,7 +23,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/passerReclamation', title: 'passer-reclamation',  icon: 'ui-2_settings-90', class: '', roleName: ['User'] },
     { path: '/admin/obligationfiscale', title: 'Mes obligations fiscales',  icon: 'business_badge', class: '', roleName: ['User'] },
     // tslint:disable-next-line:max-line-length
-    { path: '/admin/backofficedeclarationIRPP', title: 'gérer declarations',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
+    { path: '/admin/backofficedeclarationIRPP', title: 'gérer declarations IRPP',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
+    { path: '/admin/backofficedeclarationTVA', title: 'gérer declarations TVA',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
     { path: '/admin/MesDeclarationIRPP', title: 'Mes declarations irpp ',  icon: 'business_briefcase-24', class: '', roleName: ['User'] },
     { path: '/admin/MesDeclarationTVA', title: 'Mes declarations tva ',  icon: 'business_briefcase-24', class: '', roleName: ['User'] },
   //  { path: '/admin/payment', title: 'payment ',  icon: 'business_money-coins', class: '', roleName: ['User'] },

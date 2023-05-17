@@ -5,11 +5,12 @@ import { BackofficedeclarationIRPPRoutingModule } from './backofficedeclaration-
 import { ListeDeclarationIRPPComponent } from './liste-declaration-irpp/liste-declaration-irpp.component';
 import {FormsModule} from '@angular/forms';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { BackItemIrppComponent } from './back-item-irpp/back-item-irpp.component';
 
 
 
 @NgModule({
-  declarations: [ListeDeclarationIRPPComponent],
+  declarations: [ListeDeclarationIRPPComponent, BackItemIrppComponent],
     imports: [
         CommonModule,
         BackofficedeclarationIRPPRoutingModule,

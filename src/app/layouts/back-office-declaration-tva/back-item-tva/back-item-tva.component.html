@@ -1,0 +1,52 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="cookie-card">
+    <span class="title">Declaration taxe sur la valeur ajoutée</span>
+
+    <p class="text-title">Nom et Prenom :
+        <label class="description">{{dec.fullName}}</label></p>
+
+    <p class="text-title">Ventes_Soumises_TVANormale :
+        <label class="description">{{dec.ventesSoumisesTVANormale | currency: 'USD'}}  </label></p>
+
+    <p class="text-title">Ventes_Exonerees :
+        <label class="description">{{dec.ventesExonerees | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Achats_Aupres_Fournisseurs_Etrangers :
+        <label class="description">{{dec.achatsAupresFournisseursEtrangers | currency: 'USD'}}</label></p>
+
+    <p class="text-title"> Achats_Aupres_Fournisseurs_Soumis_TVANormale :
+        <label class="description">{{dec.achatsAupresFournisseursSoumisTVANormale | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Charges_Deductibles :
+        <label class="description">{{dec.chargesDeductibles | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Exportations:
+        <label class="description">{{dec.exportations | currency: 'USD'}}</label></p>
+
+    <p class="text-title">Tva_collectee:
+        <label class="description">{{dec.tvacollectee | currency: 'USD'}}</label></p>
+
+    <p class="text-title ">Tva_deductible:
+        <label class="description">{{dec.tvadeductible  | currency: 'USD'}} </label></p>
+
+    <p class="text-title ">date_Declaration_TVA:
+        <label class="description">{{dec.dateOfDeclarationTVA }} </label></p>
+
+    <p class="text-title pref">Tva_nette_A_Paye:
+        <label class="description">{{dec.tvanetteAPaye  | currency: 'USD'}} </label></p>
+
+
+    <div class="actions">
+        <button class="accept" (click)="gotoliste()">
+             Declarations TVA
+        </button>
+        <button (click)="generatePDF()" class="accept"><i class="now-ui-icons arrows-1_cloud-download-93"></i>
+            Download
+        </button>
+
+
+    </div>
+</div>
+
+
