@@ -47,7 +47,7 @@
                             <tbody   >
                             <tr  *ngFor="let rec of allReclam"  >
                                 <td (click)="goTodetail(rec.idReclamation)" style="cursor: pointer ;" >
-                                    {{rec.description}}
+                                    {{ rec.description.length > 15 ? rec.description.substring(0, 20) + ' ...' : rec.description }}
                                 </td>
                                 <td (click)="goTodetail(rec.idReclamation)" style="cursor: pointer">
                                     {{rec.dateOfReclam}}

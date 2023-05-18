@@ -17,11 +17,11 @@
 
                             <div class="col-md-6 px-1">
                                 <div class="form-group">
-                                    <label>Description</label>
-                                    <input type="text"
-                                           [formControlName]="'description'"
-                                           formControlName="description"
-                                           class="form-control" placeholder=" description " value="">
+                                    <textarea [formControlName]="'description'"
+                                              formControlName="description" class="form-control"
+                                              placeholder=" description ">
+                                    </textarea>
+
                                 </div>
                                 <div
                                         class="alert-danger">

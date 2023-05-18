@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   url: '/api/',
-  stripe: 'pk_test_51N3iERK2dt7NKQz9m6dAVUcHwSCoJPcaVznXOOSaQ2tyIGVZ7K3kOPQpvqVP4khZ6jCRRtPfX7La5TpshhdnIsdn007SCiN81b',
+  stripe: 'pk_test_51N8vbeD7kz8pNZUfIuRC8EHyN4XF0No4DNjo3UkZDYICXyZhVEzkUdiurVW84qjglBgUlyAQv9ZPcOpvD9hkREn8008cqx5JOV',
  // serverUrl: '/api',
 };

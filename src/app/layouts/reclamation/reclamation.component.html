@@ -51,8 +51,8 @@
                                 <td >
                                     {{rec.idReclamation}}
                                 </td>
-                                <td  style="cursor: pointer ;" >
-                                    {{rec.description}}
+                                <td style="cursor: pointer;">
+                                    {{ rec.description.length > 15 ? rec.description.substring(0, 20) + ' ...' : rec.description }}
                                 </td>
                                 <td style="cursor: pointer">
                                     {{rec.dateOfReclam}}
