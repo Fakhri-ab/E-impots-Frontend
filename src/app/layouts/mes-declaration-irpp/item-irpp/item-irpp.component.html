@@ -33,10 +33,10 @@
             Mes Declarations
         </button>
         <button (click)="generatePDF()" class="accept"><i class="now-ui-icons arrows-1_cloud-download-93"></i>
-            Download
+            Télécharger
         </button>
 
-        <button (click)="pay()" class="accept"><i class="now-ui-icons business_money-coins"></i>
+        <button (click)="pay()" [disabled]="checkpay" class="accept"><i class="now-ui-icons business_money-coins"></i>
             payer
         </button>
     </div>

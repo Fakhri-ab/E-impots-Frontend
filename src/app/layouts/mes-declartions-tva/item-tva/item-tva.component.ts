@@ -17,6 +17,7 @@ export class ItemTvaComponent implements OnInit {
   url = environment.url
   id: any
   dec: any
+  checkpay = true ;
   constructor(private router: Router, private router1: ActivatedRoute , private tvaService: TvaService, private http: HttpClient) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
   }
@@ -25,6 +26,9 @@ export class ItemTvaComponent implements OnInit {
     this.router1.paramMap.subscribe(paramMap => {
       this.id = paramMap.get('id');
       this.tvaService.getDeclarationTVAByid(this.id).subscribe(cat => {this.dec = cat;
+        // tslint:disable-next-line:triple-equals
+        if (this.dec.situationFiscale == 'Non payee') { this.checkpay = false
+        }
         console.log('TVAbyid' , cat)})
     })
   }
@@ -43,6 +47,8 @@ export class ItemTvaComponent implements OnInit {
       quantity: '1',
       cancelUrl: 'http://localhost:4200/admin/payment/Cancel',
       successUrl: 'http://localhost:4200/admin/payment/Success',
+      decId : this.id  ,
+      typedec : 'TVA' ,
     };
 
     const stripe = await this.stripePromise;

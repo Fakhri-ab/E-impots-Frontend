@@ -21,14 +21,20 @@ export class ItemIRPPComponent implements OnInit {
   url = environment.url
   id: any
   dec: any
+  checkpay = true ;
   constructor(private router: Router, private router1: ActivatedRoute , private irrpserv: IrppService, private http: HttpClient) {
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
   }
 
   ngOnInit(): void {
+
     this.router1.paramMap.subscribe(paramMap => {
       this.id = paramMap.get('id');
+      console.log('wael haw id' , this.id)
       this.irrpserv.getDeclarationIRPPByid(this.id).subscribe(cat => {this.dec = cat;
+        // tslint:disable-next-line:triple-equals
+        if (this.dec.situationFiscale == 'Non payee') { this.checkpay = false
+        }
         console.log('IRPPbyid' , cat)})
     })
   }
@@ -47,7 +53,11 @@ export class ItemIRPPComponent implements OnInit {
       quantity: '1',
       cancelUrl: 'http://localhost:4200/admin/payment/Cancel',
       successUrl: 'http://localhost:4200/admin/payment/Success',
+      decId : this.id  ,
+      typedec : 'IRPP' ,
+
     };
+
 
     const stripe = await this.stripePromise;
 
