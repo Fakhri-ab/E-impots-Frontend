@@ -12,5 +12,6 @@ export class DeclarationTva {
     tvacollectee: number
     tvadeductible: number
     tvanetteAPaye: number
+    situationFiscale: string
 
 }

@@ -9,4 +9,5 @@ export class DeclarationIRPP {
     fullName: string
     montanpayer: number
     dateOfDeclarationIRPP: Date
+    situationFiscale: string
 }
