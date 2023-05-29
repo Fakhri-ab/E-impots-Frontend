@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {TFService} from '../../../../shared/service/TF/tf.service';
+import {DeclarationTF} from '../../../../shared/models/declaration-tf';
+import {UserService} from '../../../../shared/service/user.service';
 
 @Component({
   selector: 'app-back-tf-liste',
@@ -14,7 +16,7 @@ export class BackTfListeComponent implements OnInit {
   page = 0
   collectionSize: number
   key = ''
-  constructor(private tfserv:  TFService , private router: Router ) { }
+  constructor(private tfserv:  TFService , private router: Router, private userService: UserService ) { }
 
   ngOnInit(): void {
     this.getalldeclarationsTF({ page: 0, size: 5, recherche: this.key }) ;
@@ -57,5 +59,18 @@ export class BackTfListeComponent implements OnInit {
     this.getalldeclarationsTF(request);
 
   }
+  deletedeclrationTF(dec: DeclarationTF) {
+    if (dec.situationFiscale === 'payee') {
+      this.tfserv.deleteDeclarationTF(dec.id).subscribe(res => {console.log(res);
+        this.router.navigate(['/admin/backofficedeclarationTF/BackTFListe']);
+        // this.toastr.showNotification('top', 'right', 3, 'Categorie:', '', '...Categorie Supprimé....')
+        this.getalldeclarationsTF({ page: 0, size: 5, recherche: this.key }) ;
+      })
+    } else { alert(' la declaration est non payee vous pouvez pas la supprimer') }
+
+  }
+
+
+
 
 }

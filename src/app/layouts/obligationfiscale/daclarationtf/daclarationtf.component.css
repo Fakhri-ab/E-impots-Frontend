@@ -1,0 +1,11 @@
+.card .card-body {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 15px 15px 10px 15px;
+}
+
+select {
+    word-wrap: normal;
+    height: 36px;
+}
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TvaService} from '../../../../shared/service/TVA/tva.service';
 import {Router} from '@angular/router';
+import {DeclarationTF} from '../../../../shared/models/declaration-tf';
 
 @Component({
   selector: 'app-back-tva-liste',
@@ -35,6 +36,16 @@ export class BackTvaListeComponent implements OnInit {
   goToBackItemTVA(id) {
     // @ts-ignore
     this.router.navigate(['/admin/backofficedeclarationTVA/BackItemTva/', id]) ;
+
+  }
+  deletedeclrationTVA(dec: DeclarationTF) {
+    if (dec.situationFiscale === 'payee') {
+      this.tvaService.deleteDeclarationTVA(dec.id).subscribe(res => {console.log(res);
+        this.router.navigate(['/admin/backofficedeclarationTVA/BackTvaListe']);
+        // this.toastr.showNotification('top', 'right', 3, 'Categorie:', '', '...Categorie Supprimé....')
+        this.getalldeclarationsTva({ page: 0, size: 5, recherche: this.key }) ;
+      })
+    } else { alert(' la declaration est non payee vous pouvez pas la supprimer') }
 
   }
 

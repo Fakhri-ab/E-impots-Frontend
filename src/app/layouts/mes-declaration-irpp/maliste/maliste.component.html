@@ -54,47 +54,51 @@
                             <th>
                                 Situation_Fiscale
                             </th>
+                            <th>
+                                Actions
+                            </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldec" (click)="goToItemIRPP(dec.id)" >
-                                <td >
+                            <tr  *ngFor="let dec of alldec"  style="cursor: pointer">
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.fullName}}
                                 </td>
-                                <td   >
+                                <td   (click)="goToItemIRPP(dec.id)">
                                     {{dec.salaires}}
                                 </td>
-                                <td >
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.revenuesFonciers}}
                                 </td >
-                                <td  >
+                                <td  (click)="goToItemIRPP(dec.id)">
                                     {{dec.revenusCapitauxMobiliers}}
                                 </td>
-                                <td  >
+                                <td  (click)="goToItemIRPP(dec.id)">
                                     {{dec.beneficesIndustrielsCommerciaux}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.beneficesNnonCommerciaux}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.pcvmi}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.montanpayer}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemIRPP(dec.id)">
                                     {{dec.situationFiscale}}
                                 </td>
-                      <!--          <td>
+                               <td>
                                     <button _ngcontent-c3  (click)="deletedeclrationIRPP(dec)" class="btn btn-primary btn-simple btn-round" type="button">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
-                                </td> -->
+                                </td>
                             </tr>
                             </tbody>
                         </table>
+                        <!--
                         <ngb-pagination
                                 [boundaryLinks]="true"  [maxSize]="3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="nextPage($event);" class="pagination-primary">
-                        </ngb-pagination>
+                        </ngb-pagination> -->
                     </div>
                 </div>
             </div>

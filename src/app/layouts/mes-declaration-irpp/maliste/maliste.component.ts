@@ -4,6 +4,7 @@ import {UserService} from '../../../../shared/service/user.service';
 import {IrppService} from '../../../../shared/service/IRPP/irpp.service';
 import {Reclamation} from '../../../../shared/models/Reclamation';
 import {DeclarationIRPP} from '../../../../shared/models/declaration-irpp';
+import {DeclarationTF} from '../../../../shared/models/declaration-tf';
 
 @Component({
   selector: 'app-maliste',
@@ -44,10 +45,13 @@ export class MalisteComponent implements OnInit {
     this.router.navigate(['/admin/MesDeclarationIRPP/itemIRPP/', id]) ;
 
   }
-
   deletedeclrationIRPP(dec: DeclarationIRPP) {
-    this.irrpserv.deleteDeclarationIRPP(dec.id).subscribe(res => {console.log(res);
-      this.router.navigate(['/admin/MesDeclarationIRPP/liste']);
-    })
+    if (dec.situationFiscale === 'payee') {
+      this.irrpserv.deleteDeclarationIRPP(dec.id).subscribe(res => {console.log(res);
+        this.router.navigate(['/admin/MesDeclarationIRPP/liste']);
+        this.getalldeclarationIRPPbyiduser()
+      })
+    } else { alert(' la declaration est non payee vous pouvez pas la supprimer') }
+
   }
 }

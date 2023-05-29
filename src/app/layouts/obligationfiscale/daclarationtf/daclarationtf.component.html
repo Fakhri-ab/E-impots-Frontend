@@ -1,0 +1,67 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4>Declaration Taxe foncière </h4>
+        </div>
+        <div class="card-body">
+
+            <form  [formGroup]="DeclarationTFForm">
+                <div class="row">
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Nom et prénom du propriétaire </label>
+                            <input type="text"
+                                   formControlName="fullNameProprietaire"
+                                   class="form-control" placeholder="Nom et prénom du propriétaire  " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Adresse du bien </label>
+                            <input type="text"
+                                   formControlName="adresseBien"
+                                   class="form-control" placeholder="Adresse du bien  " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Superficie du bien</label>
+                            <input type="text"
+                                   formControlName="superficieBien"
+                                   class="form-control" placeholder="Superficie du bien " value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 px-1">
+                        <div class="form-group">
+                            <label>Montant de la valeur locative</label>
+                            <input type="text"
+                                   formControlName="valeurlocative"
+                                   class="form-control" placeholder="Montant de la valeur locative " value="">
+                        </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                        <label>Type de bien</label>
+                    <select  class="input-group form-group-no-border input-lg btn-round" formControlName="typeBien"  id="typeBien" >
+                        <option value="Maison">Maison</option>
+                        <option value="Appartement">Appartement</option>
+                        <option value="Terrain">Terrain</option>
+                        <option value="Local commercial">Local commercial</option>
+                        <option value="Immeuble">Immeuble</option>
+                    </select>
+                    </div>
+
+                </div>
+                <hr>
+                <br>
+
+                <button type="button"  (click)="addAndCalcultaxeFonciere()" class="btn btn-primary btn-simple btn-round">
+                    <i class="now-ui-icons ui-1_simple-add"></i>Ajouter</button>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -3,6 +3,9 @@ import {Router} from '@angular/router';
 import {IrppService} from '../../../../shared/service/IRPP/irpp.service';
 import {UserService} from '../../../../shared/service/user.service';
 import {TvaService} from '../../../../shared/service/TVA/tva.service';
+import {DeclarationIRPP} from '../../../../shared/models/declaration-irpp';
+import {DeclarationTva} from '../../../../shared/models/declaration-tva';
+import {DeclarationTF} from '../../../../shared/models/declaration-tf';
 
 @Component({
   selector: 'app-maliste',
@@ -40,6 +43,16 @@ export class MalisteComponent implements OnInit {
   goToItemTVA(id) {
     // @ts-ignore
     this.router.navigate(['/admin/MesDeclarationTVA/itemTVA/', id]) ;
+
+  }
+
+  deletedeclrationTVA(dec: DeclarationTva) {
+    if (dec.situationFiscale === 'payee') {
+      this.tvaService.deleteDeclarationTVA(dec.id).subscribe(res => {console.log(res);
+        this.router.navigate(['/admin/MesDeclarationTVA/liste']);
+        this.getalldeclarationTVAbyiduser()
+      })
+    } else { alert(' la declaration est non payee vous pouvez pas la supprimer') }
 
   }
 }

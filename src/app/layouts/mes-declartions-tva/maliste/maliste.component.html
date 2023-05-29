@@ -60,47 +60,53 @@
                             <th class="text-left">
                                 Tva_nette_A_Paye
                             </th>
+                            <th class="text-left">
+                                Situation_Fiscale
+                            </th>
                             <th>
                                 Actions
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldec"  (click)="goToItemTVA(dec.id)" >
-                                <td >
+                            <tr  *ngFor="let dec of alldec" style="cursor: pointer"  >
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.fullName}}
                                 </td>
-                                <td >
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.ventesSoumisesTVANormale}}
                                 </td>
-                                <td >
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.ventesExonerees}}
                                 </td>
-                                <td   >
+                                <td  (click)="goToItemTVA(dec.id)" >
                                     {{dec.achatsAupresFournisseursEtrangers}}
                                 </td>
-                                <td >
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.achatsAupresFournisseursSoumisTVANormale}}
                                 </td >
-                                <td  >
+                                <td  (click)="goToItemTVA(dec.id)">
                                     {{dec.chargesDeductibles}}
                                 </td>
-                                <td  >
+                                <td (click)="goToItemTVA(dec.id)" >
                                     {{dec.dateOfDeclarationTVA}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.exportations}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.tvacollectee}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.tvadeductible}}
                                 </td>
-                                <td>
+                                <td (click)="goToItemTVA(dec.id)">
                                     {{dec.tvanetteAPaye}}
                                 </td>
+                                <td (click)="goToItemTVA(dec.id)">
+                                    {{dec.situationFiscale}}
+                                </td>
                                 <td>
-                                    <button _ngcontent-c3  (click)="deletedeclrationIRPP(dec)" class="btn btn-primary btn-simple btn-round" type="button">
+                                    <button _ngcontent-c3  (click)="deletedeclrationTVA(dec)" class="btn btn-primary btn-simple btn-round" type="button">
                                         <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
                                 </td>

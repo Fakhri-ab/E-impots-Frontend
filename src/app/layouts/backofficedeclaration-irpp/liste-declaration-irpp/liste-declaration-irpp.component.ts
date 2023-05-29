@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../../shared/service/user.service';
 import {Router} from '@angular/router';
 import {IrppService} from '../../../../shared/service/IRPP/irpp.service';
+import {DeclarationTF} from '../../../../shared/models/declaration-tf';
+import {DeclarationIRPP} from '../../../../shared/models/declaration-irpp';
 
 @Component({
   selector: 'app-liste-declaration-irpp',
@@ -37,6 +39,17 @@ export class ListeDeclarationIRPPComponent implements OnInit {
   goToBackItemIrpp(id) {
     // @ts-ignore
     this.router.navigate(['/admin/backofficedeclarationIRPP/BackItemIrpp/', id]) ;
+
+  }
+
+  deletedeclrationIRPP(dec: DeclarationIRPP) {
+    if (dec.situationFiscale === 'payee') {
+      this.irppService.deleteDeclarationIRPP(dec.id).subscribe(res => {console.log(res);
+        this.router.navigate(['/admin/backofficedeclarationIRPP/liste']);
+        // this.toastr.showNotification('top', 'right', 3, 'Categorie:', '', '...Categorie Supprimé....')
+        this.getalldeclarationsIRPP({ page: 0, size: 5, recherche: this.key }) ;
+      })
+    } else { alert(' la declaration est non payee vous pouvez pas la supprimer') }
 
   }
 

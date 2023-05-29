@@ -47,39 +47,45 @@
                             <th class="text-left">
                                 Montant_A_Payer
                             </th>
+                            <th class="text-left">
+                                Situation_Fiscale
+                            </th>
                             <th>
                                 Actions
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldecIRPP" (click)="goToBackItemIrpp(dec.id)" >
-                                <td >
+                            <tr  *ngFor="let dec of alldecIRPP" style="cursor: pointer"  >
+                                <td (click)="goToBackItemIrpp(dec.id)">
                                     {{dec.fullName}}
                                 </td>
-                                <td   >
+                                <td  (click)="goToBackItemIrpp(dec.id)" >
                                     {{dec.salaires}}
                                 </td>
-                                <td >
+                                <td (click)="goToBackItemIrpp(dec.id)" >
                                     {{dec.revenuesFonciers}}
-                                </td >
+                                </td>
                                 <td  >
                                     {{dec.revenusCapitauxMobiliers}}
                                 </td>
-                                <td  >
+                                <td  (click)="goToBackItemIrpp(dec.id)">
                                     {{dec.beneficesIndustrielsCommerciaux}}
                                 </td>
-                                <td>
+                                <td (click)="goToBackItemIrpp(dec.id)">
                                     {{dec.beneficesNnonCommerciaux}}
                                 </td>
-                                <td>
+                                <td (click)="goToBackItemIrpp(dec.id)">
                                     {{dec.pcvmi}}
                                 </td>
-                                <td>
+                                <td (click)="goToBackItemIrpp(dec.id)">
                                     {{dec.montanpayer}}
                                 </td>
-                                <td>
-                                    <button _ngcontent-c3  class="btn btn-primary btn-simple btn-round" type="button">
-                                        <i class="now-ui-icons arrows-1_cloud-download-93"></i>
+                                <td (click)="goToBackItemIrpp(dec.id)">
+                                    {{dec.situationFiscale}}
+                                </td>
+                                <td >
+                                    <button _ngcontent-c3  (click)="deletedeclrationIRPP(dec)" class="btn btn-primary btn-simple btn-round" type="button">
+                                        <i class="now-ui-icons ui-1_simple-remove"></i>
                                     </button>
                                 </td>
                             </tr>

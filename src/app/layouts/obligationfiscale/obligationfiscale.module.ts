@@ -6,10 +6,11 @@ import { ObligationfiscaleComponent } from './obligationfiscale.component';
 import { DeclarartionirppComponent } from './declarartionirpp/declarartionirpp.component';
 import { DeclarartiontvaComponent } from './declarartiontva/declarartiontva.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { DaclarationtfComponent } from './daclarationtf/daclarationtf.component';
 
 
 @NgModule({
-  declarations: [ObligationfiscaleComponent, DeclarartionirppComponent, DeclarartiontvaComponent],
+  declarations: [ObligationfiscaleComponent, DeclarartionirppComponent, DeclarartiontvaComponent, DaclarationtfComponent],
     imports: [
         CommonModule,
         ObligationfiscaleRoutingModule,
