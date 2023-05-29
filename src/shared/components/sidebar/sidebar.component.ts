@@ -25,8 +25,11 @@ export const ROUTES: RouteInfo[] = [
     // tslint:disable-next-line:max-line-length
     { path: '/admin/backofficedeclarationIRPP', title: 'gérer declarations IRPP',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
     { path: '/admin/backofficedeclarationTVA', title: 'gérer declarations TVA',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
+    // tslint:disable-next-line:max-line-length
+    { path: '/admin/backofficedeclarationTF', title: 'gérer declarations TF',  icon: 'business_briefcase-24', class: '', roleName: ['admin'] },
     { path: '/admin/MesDeclarationIRPP', title: 'Mes declarations irpp ',  icon: 'business_briefcase-24', class: '', roleName: ['User'] },
     { path: '/admin/MesDeclarationTVA', title: 'Mes declarations tva ',  icon: 'business_briefcase-24', class: '', roleName: ['User'] },
+    { path: '/admin/MesDeclarationTF', title: 'Mes declarations tf ',  icon: 'business_briefcase-24', class: '', roleName: ['User'] },
   //  { path: '/admin/payment', title: 'payment ',  icon: 'business_money-coins', class: '', roleName: ['User'] },
 
 

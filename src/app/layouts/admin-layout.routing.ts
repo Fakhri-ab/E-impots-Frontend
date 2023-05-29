@@ -13,6 +13,8 @@ import {MesDeclarationIRPPComponent} from './mes-declaration-irpp/mes-declaratio
 import {PaymentComponent} from './payment/payment.component';
 import {MesDeclartionsTvaComponent} from './mes-declartions-tva/mes-declartions-tva.component';
 import {BackOfficeDeclarationTvaComponent} from './back-office-declaration-tva/back-office-declaration-tva.component';
+import {BackOfficeDeclarationTfComponent} from './back-office-declaration-tf/back-office-declaration-tf.component';
+import {MesDeclarationsTFComponent} from './mes-declarations-tf/mes-declarations-tf.component';
 
 
 // @ts-ignore
@@ -147,6 +149,27 @@ export const AdminLayoutRoutes: Routes = [
                 path: '',
                 // tslint:disable-next-line:max-line-length
                 loadChildren: () => import('./mes-declartions-tva/mes-declartions-tva.module').then(x => x.MesDeclartionsTvaModule),
+
+            }]},
+    {
+        path: 'MesDeclarationTF',
+        component: MesDeclarationsTFComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./mes-declarations-tf/mes-declarations-tf.module').then(x => x.MesDeclarationsTFModule),
+
+            }]},
+
+    {
+        path: 'backofficedeclarationTF',
+        component: BackOfficeDeclarationTfComponent ,
+        children: [
+            {
+                path: '',
+                // tslint:disable-next-line:max-line-length
+                loadChildren: () => import('./back-office-declaration-tf/back-office-declaration-tf.module').then(x => x.BackOfficeDeclarationTfModule),
 
             }]}
 

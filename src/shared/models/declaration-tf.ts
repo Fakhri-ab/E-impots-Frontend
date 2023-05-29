@@ -1,8 +1,8 @@
 export class DeclarationTF {
     id: number
-    fullNameProprietaire: string
+    fullNameProprietaire: any
     situationFiscale: string
-    montantTaxeFoncière: number
+    montantTaxeFonciere: number
     dateOfDeclarationTF: Date
     adresseBien: string
     typeBien: string

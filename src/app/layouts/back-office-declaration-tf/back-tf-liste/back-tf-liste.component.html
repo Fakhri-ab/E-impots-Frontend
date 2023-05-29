@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">  Mes Declarations TVA</h2>
+                    <h2 class="card-title">  Liste Declarations TF</h2>
                 </div>
                 <form>
                     <div class="input-group no-border col-md-4">
@@ -31,73 +31,55 @@
                                 Nom_Prenom
                             </th>
                             <th class="text-left">
-                                Ventes_Soumises_TVANormale
+                                Adresse_du_bien
                             </th>
                             <th class="text-left">
-                                Ventes_Exonerees
+                                Type_de_bien
                             </th>
                             <th class="text-left">
-                                Achats_Aupres_Fournisseurs_Etrangers
+                                Superficie_du_bien
                             </th>
                             <th class="text-left">
-                                Achats_Aupres_Fournisseurs_Soumis_TVANormale
+                                Montant_valeur_locative
                             </th>
                             <th class="text-left">
-                                Charges_Deductibles
+                                date_Declaration_TF
                             </th>
                             <th class="text-left">
-                                date_Declaration_TVA
+                                Situation_fiscale
                             </th>
                             <th class="text-left">
-                                Exportations
-                            </th>
-                            <th class="text-left">
-                                Tva_collectee
-                            </th>
-                            <th class="text-left">
-                                Tva_deductible
-                            </th>
-                            <th class="text-left">
-                                Tva_nette_A_Paye
+                                Montant_taxe_foncière
                             </th>
                             <th>
                                 Actions
                             </th>
                             </thead>
                             <tbody   >
-                            <tr  *ngFor="let dec of alldec"  (click)="goToItemTVA(dec.id)" >
+                            <tr style="cursor: pointer" *ngFor="let dec of alldecTF"  (click)="goToBackItemTF(dec.id)" >
                                 <td >
-                                    {{dec.fullName}}
+                                    {{dec?.fullNameProprietaire}}
                                 </td>
                                 <td >
-                                    {{dec.ventesSoumisesTVANormale}}
+                                    {{dec.adresseBien}}
                                 </td>
                                 <td >
-                                    {{dec.ventesExonerees}}
+                                    {{dec.typeBien}}
                                 </td>
                                 <td   >
-                                    {{dec.achatsAupresFournisseursEtrangers}}
+                                    {{dec.superficieBien}}
                                 </td>
                                 <td >
-                                    {{dec.achatsAupresFournisseursSoumisTVANormale}}
+                                    {{dec.valeurlocative}}
                                 </td >
                                 <td  >
-                                    {{dec.chargesDeductibles}}
+                                    {{dec.dateOfDeclarationTF}}
                                 </td>
                                 <td  >
-                                    {{dec.dateOfDeclarationTVA}}
+                                    {{dec.situationFiscale}}
                                 </td>
                                 <td>
-                                    {{dec.exportations}}
-                                </td>
-                                <td>
-                                    {{dec.tvacollectee}}
-                                </td>
-                                <td>
-                                    {{dec.tvadeductible}}
-                                </td>
-                                <td>
-                                    {{dec.tvanetteAPaye}}
+                                    {{dec.montantTaxeFonciere}}
                                 </td>
                                 <td>
                                     <button _ngcontent-c3  (click)="deletedeclrationIRPP(dec)" class="btn btn-primary btn-simple btn-round" type="button">
@@ -107,11 +89,9 @@
                             </tr>
                             </tbody>
                         </table>
-                        <!--
                         <ngb-pagination
                                 [boundaryLinks]="true"  [maxSize]="3" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="nextPage($event);" class="pagination-primary">
                         </ngb-pagination>
-                        -->
                     </div>
                 </div>
             </div>

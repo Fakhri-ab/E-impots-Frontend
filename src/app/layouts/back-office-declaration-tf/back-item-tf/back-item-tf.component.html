@@ -1,0 +1,44 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="cookie-card">
+    <span class="title">Declaration taxe  foncière </span>
+
+    <p class="text-title">Nom et Prenom :
+        <label class="description">{{dec.fullNameProprietaire}}</label></p>
+
+    <p class="text-title">Adresse_du_bien :
+        <label class="description">{{dec.adresseBien }}</label></p>
+
+    <p class="text-title">Type_de_bien :
+        <label class="description">{{dec.typeBien }}</label></p>
+
+    <p class="text-title"> Superficie_du_bien :
+        <label class="description">{{dec.superficieBien }}</label></p>
+
+    <p class="text-title">Montant_valeur_locative :
+        <label class="description">{{dec.valeurlocative | currency: 'USD'}}</label></p>
+
+    <p class="text-title">date_Declaration_TF:
+        <label class="description">{{dec.dateOfDeclarationTF }}</label></p>
+
+    <p class="text-title">Situation_fiscale:
+        <label class="description">{{dec.situationFiscale }}</label></p>
+
+    <p class="text-title ">Montant_taxe_foncière:
+        <label class="description">{{dec.montantTaxeFonciere  | currency: 'USD'}} </label></p>
+
+
+
+    <div class="actions">
+        <button class="accept" (click)="gotoliste()">
+            Declarations TF
+        </button>
+        <button (click)="generatePDF()" class="accept"><i class="now-ui-icons arrows-1_cloud-download-93"></i>
+            Download
+        </button>
+
+
+    </div>
+</div>
+
+

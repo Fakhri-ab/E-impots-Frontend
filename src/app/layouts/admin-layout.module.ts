@@ -18,6 +18,8 @@ import { BackofficedeclarationIRPPComponent } from './backofficedeclaration-irpp
 import { MesDeclarationIRPPComponent } from './mes-declaration-irpp/mes-declaration-irpp.component';
 import { MesDeclartionsTvaComponent } from './mes-declartions-tva/mes-declartions-tva.component';
 import { BackOfficeDeclarationTvaComponent } from './back-office-declaration-tva/back-office-declaration-tva.component';
+import { BackOfficeDeclarationTfComponent } from './back-office-declaration-tf/back-office-declaration-tf.component';
+import { MesDeclarationsTFComponent } from './mes-declarations-tf/mes-declarations-tf.component';
 
 
 
@@ -45,6 +47,8 @@ import { BackOfficeDeclarationTvaComponent } from './back-office-declaration-tva
     MesDeclarationIRPPComponent,
     MesDeclartionsTvaComponent,
     BackOfficeDeclarationTvaComponent,
+    BackOfficeDeclarationTfComponent,
+    MesDeclarationsTFComponent,
 
 
 
